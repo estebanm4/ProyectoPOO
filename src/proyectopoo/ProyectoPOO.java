@@ -10,6 +10,7 @@ public class ProyectoPOO {
     public class Application extends JFrame {
     
     public Application() {
+        
         initUI();
     }
 
