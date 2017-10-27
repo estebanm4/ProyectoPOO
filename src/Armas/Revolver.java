@@ -4,4 +4,8 @@ package Armas;
  */
 public class Revolver extends LargoAlcance {
     
+    public Revolver(int daño, int alcance, int tCarga, int NoUsos, int probabilidad) {
+        super(daño, alcance, tCarga, NoUsos, probabilidad);
+    }
+    
 }

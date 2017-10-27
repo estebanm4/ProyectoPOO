@@ -4,4 +4,8 @@ package Armas;
  */
 public class Lanzacohetes extends LargoAlcance {
     
+    public Lanzacohetes(int daño, int alcance, int tCarga, int NoUsos, int probabilidad) {
+        super(daño, alcance, tCarga, NoUsos, probabilidad);
+    }
+    
 }

@@ -4,4 +4,8 @@ package Armas;
  */
 public class Espada extends CuerpoACuerpo {
     
+    public Espada(int daño, int alcance, int tCarga, int NoUsos, int probabilidad) {
+        super(daño, alcance, tCarga, NoUsos, probabilidad);
+    }
+    
 }
