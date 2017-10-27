@@ -47,14 +47,9 @@ public class Board extends JPanel  implements ActionListener {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Image fondo = loadImage("fondo.png");
+        Image fondo = loadImage("FONDO MENU.jpg");
         g.drawImage(fondo, 0, 0, null);
         
-        Image moto = loadImage("scooter.gif");
-        g.drawImage(moto, 500, INITIAL_Y, null);
-        g.drawRect(500, INITIAL_Y, 102,66);
-        
-        Image gato = loadImage("cats.gif");
         /*
         
         img - the specified image to be drawn. 
@@ -71,7 +66,7 @@ public class Board extends JPanel  implements ActionListener {
         observer - object to be notified as more of the image is scaled and converted.
         
         */
-        g.drawImage(gato, x, y,x + 132,y+80,(this.secuencia*132),0,(this.secuencia*132)+132,80,this);
+        
         g.drawRect(x, y, 132,80);
     }
 
