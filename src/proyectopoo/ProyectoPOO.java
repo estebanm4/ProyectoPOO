@@ -15,11 +15,13 @@ public class ProyectoPOO {
     }
 
     private void initUI() {
+        
         add(new Board());
         setSize(1024, 512);
         setTitle("Ejercicio 1");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        
     }    
     
     public void main(String[] args) {
