@@ -14,10 +14,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-/**
- *
- * @author lenovo
- */
 
 public class Board extends JPanel  implements ActionListener {
 
