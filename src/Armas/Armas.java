@@ -7,9 +7,9 @@ public abstract class Armas {
     public int alcance;
     public int tCarga;
     public int NoUsos;
-    public int probabilidad;
+    public double probabilidad;
 
-    public Armas(int daño, int alcance, int tCarga, int NoUsos, int probabilidad) {
+    public Armas(int daño, int alcance, int tCarga, int NoUsos, double probabilidad) {
         this.daño = daño;
         this.alcance = alcance;
         this.tCarga = tCarga;

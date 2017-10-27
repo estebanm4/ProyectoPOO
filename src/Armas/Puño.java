@@ -4,8 +4,8 @@ package Armas;
  */
 public class Puño extends CuerpoACuerpo {
     
-    public Puño(int daño, int alcance, int tCarga, int NoUsos, int probabilidad) {
-        super(daño, alcance, tCarga, NoUsos, probabilidad);
+    public Puño(int daño, int alcance, int tCarga, int NoUsos, double probabilidad) {
+        super(2, (1*128), 500, 1000000, 1);
     }
     
 }

@@ -5,7 +5,7 @@ import Armas.Armas;
  */
 public abstract class CuerpoACuerpo extends Armas{
     
-    public CuerpoACuerpo(int daño, int alcance, int tCarga, int NoUsos, int probabilidad) {
+    public CuerpoACuerpo(int daño, int alcance, int tCarga, int NoUsos, double probabilidad) {
         super(daño, alcance, tCarga, NoUsos, probabilidad);
     }
     
