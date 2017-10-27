@@ -1,16 +1,11 @@
 package proyectopoo;
-
 import javax.swing.JFrame;
-
 /**
  * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
  */
-public class ProyectoPOO {
-
-    public class Application extends JFrame {
+public class ProyectoPOO extends JFrame{ 
     
-    public Application() {
-        
+    public ProyectoPOO() {
         initUI();
     }
 
@@ -25,9 +20,9 @@ public class ProyectoPOO {
     }    
     
     public void main(String[] args) {
-        Application ex = new Application();
+        ProyectoPOO ex = new ProyectoPOO();
         ex.setVisible(true);
        
     }
-  }
 }
+
