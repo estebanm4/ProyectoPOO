@@ -45,7 +45,8 @@ public class Board extends JPanel  implements ActionListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Image fondo = loadImage("FONDO MENU.jpg");
-        g.drawImage(fondo, 0, 0, null);
+        g.drawImage(fondo, 0, 0, 1280, 720, 0, 0, 1752, 1054, this);
+       
         
         /*
         
@@ -62,9 +63,7 @@ public class Board extends JPanel  implements ActionListener {
         sy2 - the y coordinate of the second corner of the source rectangle. 
         observer - object to be notified as more of the image is scaled and converted.
         
-        */
-        
-        g.drawRect(x, y, 132,80);
+        g.drawRect(x, y, 132,80*/
     }
 
    
