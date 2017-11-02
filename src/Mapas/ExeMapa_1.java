@@ -18,9 +18,9 @@ public class ExeMapa_1 extends JFrame {
         setLocationRelativeTo(null);
     }    
     
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         ExeMapa_1 ex = new ExeMapa_1();
         ex.setVisible(true);
        
-    }
+    }*/
 }
