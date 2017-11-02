@@ -12,15 +12,15 @@ public class ExeMapa_1 extends JFrame {
 
     private void initUI() {
         add(new Mapa_1());
-        setSize(1303, 775);
+        setSize(1280, 720);
         setTitle("Mapa_1");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }    
     
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         ExeMapa_1 ex = new ExeMapa_1();
         ex.setVisible(true);
        
-    }*/
+    }
 }
