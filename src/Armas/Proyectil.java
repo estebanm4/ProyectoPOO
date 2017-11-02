@@ -2,6 +2,6 @@ package Armas;
 /**
  * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
  */
-public class Punio extends CuerpoACuerpo {
+public class Proyectil {
     
 }
