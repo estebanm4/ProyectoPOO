@@ -44,8 +44,12 @@ public class Board extends JPanel  implements ActionListener {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Image fondo = loadImage("FONDO MENU.jpg");
-        g.drawImage(fondo, 0, 0, null);
+        Image asd = loadImage("FONDO MENU.jpg");
+        g.drawImage(asd, 0, 0, 1280, 720, 0, 0, 1752, 1054, this);
+          
+        Image fondo = loadImage("Sara.png");
+        g.drawImage(fondo, 0, 0, 1280, 720, 0, 0, 1752, 1054, this);
+        
         
         /*
         
