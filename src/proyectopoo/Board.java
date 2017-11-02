@@ -25,6 +25,7 @@ public class Board extends JPanel  implements ActionListener {
     private int x, y;
     private int secuencia;
 
+    
     public Board() {
         this.secuencia = 0;
         initBoard();
