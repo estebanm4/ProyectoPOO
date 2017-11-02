@@ -47,7 +47,6 @@ public class Board extends JPanel  implements ActionListener {
         Image fondo = loadImage("FONDO MENU.jpg");
         g.drawImage(fondo, 0, 0, 1280, 720, 0, 0, 1752, 1054, this);
         /*
-        
         img - the specified image to be drawn. 
         This method does nothing if img is null. 
         dx1 - the x coordinate of the first corner of the destination rectangle. 
