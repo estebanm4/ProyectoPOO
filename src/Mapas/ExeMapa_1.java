@@ -17,10 +17,10 @@ public class ExeMapa_1 extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }    
-    /*
+    
     public static void main(String[] args) {
         ExeMapa_1 ex = new ExeMapa_1();
         ex.setVisible(true);
        
-    }*/
+    }
 }

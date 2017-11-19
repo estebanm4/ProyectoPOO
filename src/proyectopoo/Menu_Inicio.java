@@ -33,7 +33,6 @@ public class Menu_Inicio extends JPanel implements ActionListener {
 
     private JButton botonPrueba; // Prueba
     private JButton botonPrueba2; // Prueba
-    
     private JFrame ventana; // Prueba
     
     private ExeMapaVolcan mapaVolcan; // Prueba
