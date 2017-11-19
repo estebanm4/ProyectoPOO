@@ -15,17 +15,23 @@ import javax.swing.JFrame;
  */
 public class ProyectoPOOMAIN extends JFrame{ 
     
+    // Atributos
     public ProyectoPOOMAIN() {
         initUI();
     }
 
     private void initUI() {
-        
-        add(new Board());
+        add(new Menu_Inicio(this));
         setSize(1024, 512);
         setTitle("Ejercicio 1");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        
+        /*add(new MapaVolcan());
+        setSize(1280, 720);
+        setTitle("mapavolcan");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);*/
         
     }    
 
@@ -34,5 +40,4 @@ public class ProyectoPOOMAIN extends JFrame{
         ex.setVisible(true);
         ex.initUI();
     }
-    
 }

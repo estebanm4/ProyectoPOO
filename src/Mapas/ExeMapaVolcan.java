@@ -14,7 +14,7 @@ public class ExeMapaVolcan extends JFrame {
     }
 
     private void initUI() {
-        add(new MapaVolcan());
+        add(new MapaVolcan(this));
         setSize(1280, 720);
         setTitle("mapavolcan");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,6 +24,5 @@ public class ExeMapaVolcan extends JFrame {
     public static void main(String[] args) {
         ExeMapaVolcan ex = new ExeMapaVolcan();
         ex.setVisible(true);
-       
     }
 }

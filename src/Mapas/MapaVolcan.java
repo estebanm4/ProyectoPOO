@@ -6,14 +6,18 @@
 package Mapas;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import proyectopoo.ProyectoPOOMAIN;
 
 public class MapaVolcan extends JPanel implements ActionListener {
 
@@ -23,13 +27,28 @@ public class MapaVolcan extends JPanel implements ActionListener {
     private int secuencia;
     private int x = 0;
 
-    public MapaVolcan() {
+    private ProyectoPOOMAIN ventanaMain;
+    private JButton btnDevolver;
+    private JFrame ventana;
+            
+    public MapaVolcan(JFrame ventana) {
+        this.ventana = ventana;
         this.secuencia = 0;
         initMapaVolcan();
     }
 
     private void initMapaVolcan() {
         setBackground(Color.WHITE);
+        setLayout(null);
+        
+        btnDevolver = new JButton("Boton prueba");
+        btnDevolver.setBounds(28, 102, 219, 23);
+        btnDevolver.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
+        btnDevolver.setForeground(Color.BLACK);
+        btnDevolver.setBackground(Color.WHITE);
+        btnDevolver.addActionListener(this);
+        this.add(btnDevolver);
+        
         this.timer = new Timer(delay, this);
         timer.start();
     }
@@ -194,6 +213,11 @@ public class MapaVolcan extends JPanel implements ActionListener {
             x = 0;
         }
         repaint();
+        if(e.getSource() == btnDevolver){
+            ventana.dispose();
+            ventanaMain = new ProyectoPOOMAIN();
+            ventanaMain.setVisible(true); 
+        }
     }
 
 }
