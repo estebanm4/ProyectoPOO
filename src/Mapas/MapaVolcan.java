@@ -17,7 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import proyectopoo.ProyectoPOOMAIN;
+import proyectopoo.PPOOMAIN;
 
 public class MapaVolcan extends JPanel implements ActionListener {
 
@@ -27,7 +27,7 @@ public class MapaVolcan extends JPanel implements ActionListener {
     private int secuencia;
     private int x = 0;
 
-    private ProyectoPOOMAIN ventanaMain;
+    private PPOOMAIN ventanaMain;
     private JButton btnDevolver;
     private JFrame ventana;
             
@@ -215,7 +215,7 @@ public class MapaVolcan extends JPanel implements ActionListener {
         repaint();
         if(e.getSource() == btnDevolver){
             ventana.dispose();
-            ventanaMain = new ProyectoPOOMAIN();
+            ventanaMain = new PPOOMAIN();
             ventanaMain.setVisible(true); 
         }
     }

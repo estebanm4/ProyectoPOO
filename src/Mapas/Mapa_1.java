@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import proyectopoo.ProyectoPOOMAIN;
+import proyectopoo.PPOOMAIN;
 
 public class Mapa_1 extends JPanel  implements ActionListener {
 
@@ -27,7 +27,7 @@ public class Mapa_1 extends JPanel  implements ActionListener {
 
     private JFrame ventana;
     private JButton btnDevolver;
-    private ProyectoPOOMAIN ventanaMain;
+    private PPOOMAIN ventanaMain;
     
     public Mapa_1 (JFrame ventana) {
         this.ventana = ventana;
@@ -66,7 +66,7 @@ public class Mapa_1 extends JPanel  implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == btnDevolver){
-            ventanaMain = new ProyectoPOOMAIN();
+            ventanaMain = new PPOOMAIN();
             ventanaMain.setVisible(true); ventana.dispose();
         }
         

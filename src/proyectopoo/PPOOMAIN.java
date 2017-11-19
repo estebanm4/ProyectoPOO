@@ -13,10 +13,10 @@ import javax.swing.JFrame;
 /**
  * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
  */
-public class ProyectoPOOMAIN extends JFrame{ 
+public class PPOOMAIN extends JFrame{ 
     
     // Atributos
-    public ProyectoPOOMAIN() {
+    public PPOOMAIN() {
         initUI();
     }
 
@@ -36,7 +36,7 @@ public class ProyectoPOOMAIN extends JFrame{
     }    
 
     public static void main(String[] args) {
-        ProyectoPOOMAIN ex = new ProyectoPOOMAIN();
+        PPOOMAIN ex = new PPOOMAIN();
         ex.setVisible(true);
         ex.initUI();
     }
