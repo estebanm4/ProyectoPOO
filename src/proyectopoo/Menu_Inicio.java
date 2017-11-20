@@ -76,7 +76,6 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         super.paintComponent(g);
         Image fondo = loadImage("FONDO MENU.jpg");
         g.drawImage(fondo, 0, 0, 1280, 720, 0, 0, 1752, 1054, this);
-   
     }
 
    
