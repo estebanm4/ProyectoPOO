@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 public class ExeMapaVolcan extends JFrame {
     
     public ExeMapaVolcan() {
-
         initUI();
     }
 

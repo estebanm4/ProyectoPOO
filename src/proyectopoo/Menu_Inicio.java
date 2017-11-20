@@ -76,21 +76,7 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         super.paintComponent(g);
         Image fondo = loadImage("FONDO MENU.jpg");
         g.drawImage(fondo, 0, 0, 1280, 720, 0, 0, 1752, 1054, this);
-        /*
-        img - the specified image to be drawn. 
-        This method does nothing if img is null. 
-        dx1 - the x coordinate of the first corner of the destination rectangle. 
-        dy1 - the y coordinate of the first corner of the destination rectangle. 
-        dx2 - the x coordinate of the second corner of the destination rectangle. 
-        dy2 - the y coordinate of the second corner of the destination rectangle. 
-        
-        sx1 - the x coordinate of the first corner of the source rectangle. 
-        sy1 - the y coordinate of the first corner of the source rectangle. 
-        sx2 - the x coordinate of the second corner of the source rectangle. 
-        sy2 - the y coordinate of the second corner of the source rectangle. 
-        observer - object to be notified as more of the image is scaled and converted.
-        
-        g.drawRect(x, y, 132,80*/
+   
     }
 
    
@@ -100,12 +86,8 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         if(this.secuencia == 5){
           this.secuencia = 0;
         }else 
-            this.secuencia++;
-        
-       //TAMANO MAXIMO. ESTO DEBE SER AJUSTADO A PARTIR DE VARIABLES. 
-       if(x>=900)
-           x=INITIAL_X;
-       repaint();*/
+            this.secuencia++;*/
+
         if(e.getSource() == botonPrueba){
             mapaVolcan = new ExeMapaVolcan();
             ventana.dispose(); mapaVolcan.setVisible(true);
