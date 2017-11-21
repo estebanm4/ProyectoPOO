@@ -62,7 +62,7 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         this.add(SelecMapa2);
         
         SelecMapa3 = new JButton("MAPA 3 ( MAPA 3 )");
-        SelecMapa3.setBounds(250, 520, 300, 25);
+        SelecMapa3.setBounds(250, 550, 300, 25);
         SelecMapa3.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
         SelecMapa3.setForeground(Color.BLACK);
         SelecMapa3.setBackground(Color.WHITE);
@@ -70,7 +70,7 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         this.add(SelecMapa3);
         
         SelecMapa4 = new JButton("MAPA 4 ( MAPA 4 )");
-        SelecMapa4.setBounds(720, 520, 300, 25);
+        SelecMapa4.setBounds(720, 550, 300, 25);
         SelecMapa4.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
         SelecMapa4.setForeground(Color.BLACK);
         SelecMapa4.setBackground(Color.WHITE);
@@ -91,6 +91,18 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         super.paintComponent(g);
         Image fondo = loadImage("explosion_nuclear.jpg");
         g.drawImage(fondo, 0, 0, 1280, 720, 0, 0, 670, 413, this);
+        
+        Image MAPA1 = loadImage("bg_volcano.png");
+        g.drawImage(MAPA1, 230, 100, 570, 350, 0, 0, 1280, 720, this);
+        
+        Image MAPA2 = loadImage("Mapa_1Final.png");
+        g.drawImage(MAPA2, 700, 100, 1080, 350, 0, 0, 639, 505, this);
+        
+        Image MAPA3 = loadImage("bg_volcano.png");
+        g.drawImage(MAPA3, 230, 350, 570, 580, 0, 0, 1280, 720, this);
+        
+        Image MAPA4 = loadImage("Mapa_1Final.png");
+        g.drawImage(MAPA4, 700, 350, 1080, 580, 0, 0, 639, 505, this);
     }
     
     @Override

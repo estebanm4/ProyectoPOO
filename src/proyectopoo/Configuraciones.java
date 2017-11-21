@@ -59,10 +59,15 @@ public class Configuraciones extends JPanel implements ActionListener, Serializa
 	tabbedPane.addTab("INSTRUCCIONES", null, INSTRUCCIONES, null);
 	INSTRUCCIONES.setLayout(null);
 		
-	JLabel lblNombre = new JLabel("Nombre:");
-	lblNombre.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-	lblNombre.setBounds(31, 28, 52, 23);
-	INSTRUCCIONES.add(lblNombre);
+	JLabel Instrucciones = new JLabel(" INSTRUCCIONES: "+"\n"+"\n"+
+                " El objetivo del juego es combatir en un entorno 2D entre "+"\n"+
+                " varios jugadores con los cuales estara luchando utilizando "+"\n"+
+                " armas de diferente accion, rango y potencia con el fin de  "+"\n"+
+                " bajar la vida de los oponentes y asi derrotarlos siendo el  "+"\n"+
+                " ultimo en pie proclamandose asi el GANADOR.");
+	Instrucciones.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
+	Instrucciones.setBounds(10, 10, 700, 400);
+	INSTRUCCIONES.add(Instrucciones);
         
         JPanel CONTROLES = new JPanel();                
 	CONTROLES.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
@@ -70,7 +75,7 @@ public class Configuraciones extends JPanel implements ActionListener, Serializa
 	tabbedPane.addTab(" CONTROLES ", null, CONTROLES, null);
 	CONTROLES.setLayout(null);
         
-        JLabel TextControl = new JLabel("Nombre:");
+        JLabel TextControl = new JLabel(" CONTROLES:");
 	TextControl.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
 	TextControl.setBounds(31, 28, 52, 23);
 	CONTROLES.add(TextControl);
@@ -81,7 +86,7 @@ public class Configuraciones extends JPanel implements ActionListener, Serializa
 	tabbedPane.addTab(" CREDITOS ", null, CREDITOS, null);
 	CREDITOS.setLayout(null);
         
-        JLabel TextCredit = new JLabel("Nombre:");
+        JLabel TextCredit = new JLabel(" CREDITOS:");
 	TextCredit.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
 	TextCredit.setBounds(31, 28, 52, 23);
 	CREDITOS.add(TextCredit);
@@ -92,7 +97,7 @@ public class Configuraciones extends JPanel implements ActionListener, Serializa
 	tabbedPane.addTab(" CONFIGURACIONES ", null, CONFIGURACIONES, null);
 	CONFIGURACIONES.setLayout(null);
         
-	JLabel TextConfig = new JLabel("Nombre:");
+	JLabel TextConfig = new JLabel(" CONFIGURACIONES:");
 	TextConfig.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
 	TextConfig.setBounds(31, 28, 52, 23);
 	CONFIGURACIONES.add(TextConfig);	
