@@ -22,17 +22,10 @@ public class PPOOMAIN extends JFrame{
 
     private void initUI() {
         add(new Menu_Inicio(this));
-        setSize(1024, 512);
+        setSize(1296, 750);
         setTitle("Ejercicio 1");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        
-        /*add(new MapaVolcan());
-        setSize(1280, 720);
-        setTitle("mapavolcan");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);*/
-        
     }    
 
     public static void main(String[] args) {

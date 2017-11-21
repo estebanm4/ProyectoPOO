@@ -18,29 +18,21 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.Timer;
-
 
 public class Menu_Inicio extends JPanel implements ActionListener {
 
-    private final int INITIAL_X = -40;
-    private final int INITIAL_Y = 340;
-    private final int DELAY = 50;
-
-    private Timer timer;
-    private int x, y;
-    private int secuencia;
-
-    private JButton botonPrueba; // Prueba
-    private JButton botonPrueba2; // Prueba
+    private JButton BotonJUGAR; // Prueba
+    private JButton BotonCONFIGURACIONES; // Prueba
+    
     private JFrame ventana; // Prueba
     
     private ExeMapaVolcan mapaVolcan; // Prueba
     private ExeMapa_1 mapa1; // Prueba
+    private ExeConfig configuraciones;
+    private ExeSelecMapa seleccionMapa;
     
     public Menu_Inicio(JFrame ventana) {
         this.ventana = ventana;
-        this.secuencia = 0;
         initBoard();
     }
 
@@ -48,27 +40,22 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         setLayout(null); // Colocar elementos en cualquier lado
         setBackground(Color.WHITE);
        
-        botonPrueba = new JButton("Boton prueba");
-        botonPrueba.setBounds(28, 102, 219, 23);
-        botonPrueba.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-        botonPrueba.setForeground(Color.BLACK);
-        botonPrueba.setBackground(Color.WHITE);
-        botonPrueba.addActionListener(this);
-        this.add(botonPrueba);
+        BotonJUGAR = new JButton("JUGAR - NUEVA PARTIDA");
+        BotonJUGAR.setBounds(470, 480, 300, 30);
+        BotonJUGAR.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+        BotonJUGAR.setForeground(Color.BLACK);
+        BotonJUGAR.setBackground(Color.WHITE);
+        BotonJUGAR.addActionListener(this);
+        this.add(BotonJUGAR);
         
-        botonPrueba2 = new JButton("Boton prueba2");
-        botonPrueba2.setBounds(28, 122, 219, 23);
-        botonPrueba2.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-        botonPrueba2.setForeground(Color.BLACK);
-        botonPrueba2.setBackground(Color.WHITE);
-        botonPrueba2.addActionListener(this);
-        this.add(botonPrueba2);
+        BotonCONFIGURACIONES = new JButton("CONFIGURACIÓN");
+        BotonCONFIGURACIONES.setBounds(520, 530, 200, 30);
+        BotonCONFIGURACIONES.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+        BotonCONFIGURACIONES.setForeground(Color.BLACK);
+        BotonCONFIGURACIONES.setBackground(Color.WHITE);
+        BotonCONFIGURACIONES.addActionListener(this);
+        this.add(BotonCONFIGURACIONES);
         
-        x = INITIAL_X;
-        y = INITIAL_Y;
-        //Fires one or more ActionEvents at specified intervals.
-        timer = new Timer(DELAY, this);
-        timer.start();
     }
 
     @Override
@@ -77,25 +64,21 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         Image fondo = loadImage("FONDO MENU.jpg");
         g.drawImage(fondo, 0, 0, 1280, 720, 0, 0, 1752, 1054, this);
     }
-
-   
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        /*x += 5;
-        if(this.secuencia == 5){
-          this.secuencia = 0;
-        }else 
-            this.secuencia++;*/
 
-        if(e.getSource() == botonPrueba){
-            mapaVolcan = new ExeMapaVolcan();
-            ventana.dispose(); mapaVolcan.setVisible(true);
+        if(e.getSource() == BotonJUGAR){
+            seleccionMapa = new ExeSelecMapa();
+            ventana.dispose(); 
+            seleccionMapa.setVisible(true);
         }
-        if(e.getSource() == botonPrueba2){
-            mapa1 = new ExeMapa_1();
-            ventana.dispose(); mapa1.setVisible(true);
-            JOptionPane.showMessageDialog(null,"" + getWidth()); 
-            JOptionPane.showMessageDialog(null,"" + getHeight());
+        if(e.getSource() == BotonCONFIGURACIONES){            
+            configuraciones = new ExeConfig();
+            ventana.dispose(); 
+            configuraciones.setVisible(true);
+            //JOptionPane.showMessageDialog(null,"" + getWidth()); 
+            //JOptionPane.showMessageDialog(null,"" + getHeight());
         }
     }
     

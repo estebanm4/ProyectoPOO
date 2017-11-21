@@ -7,7 +7,6 @@ package Mapas;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -17,7 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import proyectopoo.PPOOMAIN;
+import proyectopoo.ExeSelecMapa;
 
 public class MapaVolcan extends JPanel implements ActionListener {
 
@@ -27,8 +26,8 @@ public class MapaVolcan extends JPanel implements ActionListener {
     private int secuencia;
     private int x = 0;
 
-    private PPOOMAIN ventanaMain;
-    private JButton btnDevolver;
+    private ExeSelecMapa ventanaVolverSelecMapa;
+    private JButton VolverSelecMapa;
     private JFrame ventana;
             
     public MapaVolcan(JFrame ventana) {
@@ -41,13 +40,13 @@ public class MapaVolcan extends JPanel implements ActionListener {
         setBackground(Color.WHITE);
         setLayout(null);
         
-        btnDevolver = new JButton("Boton prueba");
-        btnDevolver.setBounds(28, 102, 219, 23);
-        btnDevolver.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-        btnDevolver.setForeground(Color.BLACK);
-        btnDevolver.setBackground(Color.WHITE);
-        btnDevolver.addActionListener(this);
-        this.add(btnDevolver);
+        VolverSelecMapa = new JButton(" SALIR ");
+        VolverSelecMapa.setBounds(585, 640, 100, 25);
+        VolverSelecMapa.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
+        VolverSelecMapa.setForeground(Color.BLACK);
+        VolverSelecMapa.setBackground(Color.WHITE);
+        VolverSelecMapa.addActionListener(this);
+        this.add(VolverSelecMapa);
         
         this.timer = new Timer(delay, this);
         timer.start();
@@ -157,23 +156,14 @@ public class MapaVolcan extends JPanel implements ActionListener {
         g.drawImage(pisoedgealt, 128 * 5, piso, null);
         Image pisoedge2alt = loadImage("volcano_pack_36.png");
         g.drawImage(pisoedge2alt, 128 * 7, piso, null);
-       
-            
-
-     
-        
         }
-        }
+      }
         
-        
-
         for (j = -128; j <= 20 * 128; j = j + 128) {
 
             g.drawImage(lava, j + x, piso + 32, this);
             g.drawImage(lava, j - x, piso + 32, this);
             
-            
-
         }
     }
 
@@ -196,10 +186,10 @@ public class MapaVolcan extends JPanel implements ActionListener {
             x = 0;
         }
         repaint();
-        if(e.getSource() == btnDevolver){
+        if(e.getSource() == VolverSelecMapa){            
+            ventanaVolverSelecMapa = new ExeSelecMapa();
             ventana.dispose();
-            ventanaMain = new PPOOMAIN();
-            ventanaMain.setVisible(true); 
+            ventanaVolverSelecMapa.setVisible(true); 
         }
     }
 

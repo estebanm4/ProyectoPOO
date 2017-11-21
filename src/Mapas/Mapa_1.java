@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import proyectopoo.PPOOMAIN;
+import proyectopoo.ExeSelecMapa;
 
 public class Mapa_1 extends JPanel  implements ActionListener {
 
@@ -24,10 +24,10 @@ public class Mapa_1 extends JPanel  implements ActionListener {
     private Timer timer;
     private int x, y;
     private int secuencia;
-
-    private JFrame ventana;
-    private JButton btnDevolver;
-    private PPOOMAIN ventanaMain;
+    
+    private ExeSelecMapa ventanaVolverSelecMapa;
+    private JButton VolverSelecMapa;
+    private JFrame ventana;    
     
     public Mapa_1 (JFrame ventana) {
         this.ventana = ventana;
@@ -39,13 +39,13 @@ public class Mapa_1 extends JPanel  implements ActionListener {
         setBackground(Color.WHITE);
         setLayout(null);
         
-        btnDevolver = new JButton("Boton prueba");
-        btnDevolver.setBounds(28, 102, 219, 23);
-        btnDevolver.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-        btnDevolver.setForeground(Color.BLACK);
-        btnDevolver.setBackground(Color.WHITE);
-        btnDevolver.addActionListener(this);
-        this.add(btnDevolver);
+        VolverSelecMapa = new JButton(" SALIR ");
+        VolverSelecMapa.setBounds(585, 640, 100, 25);
+        VolverSelecMapa.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
+        VolverSelecMapa.setForeground(Color.BLACK);
+        VolverSelecMapa.setBackground(Color.WHITE);
+        VolverSelecMapa.addActionListener(this);
+        this.add(VolverSelecMapa);
         
         x = xRef;
         y = yRef;
@@ -65,9 +65,9 @@ public class Mapa_1 extends JPanel  implements ActionListener {
    
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == btnDevolver){
-            ventanaMain = new PPOOMAIN();
-            ventanaMain.setVisible(true); ventana.dispose();
+        if(e.getSource() == VolverSelecMapa){
+            ventanaVolverSelecMapa = new ExeSelecMapa();
+            ventanaVolverSelecMapa.setVisible(true); ventana.dispose();
         }
         
         /*x += 5;
