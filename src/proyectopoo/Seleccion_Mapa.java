@@ -6,6 +6,7 @@
 package proyectopoo;
 
 import Mapas.ExeMapaCiudad;
+import Mapas.ExeMapaJungla;
 import Mapas.ExeMapaVolcan;
 import Mapas.ExeMapa_1;
 import java.awt.Color;
@@ -32,6 +33,7 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
     private JButton Devolver; // Prueba
     
     private PPOOMAIN ventanaMain;
+    private ExeMapaJungla mapaJungla;
     private ExeMapaCiudad mapaCiudad;
     private ExeMapaVolcan mapaVolcan; // Prueba
     private ExeMapa_1 mapa1; // Prueba
@@ -56,7 +58,7 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         this.add(SelecMapa1);
         
         SelecMapa2 = new JButton("MAPA 2 ( BOSQUES REAL )");
-        SelecMapa2.setBounds(720, 320, 300, 25);
+        SelecMapa2.setBounds(740, 320, 300, 25);
         SelecMapa2.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
         SelecMapa2.setForeground(Color.BLACK);
         SelecMapa2.setBackground(Color.WHITE);
@@ -71,8 +73,8 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         SelecMapa3.addActionListener(this);
         this.add(SelecMapa3);
         
-        SelecMapa4 = new JButton("MAPA 4 ( MAPA 4 )");
-        SelecMapa4.setBounds(720, 550, 300, 25);
+        SelecMapa4 = new JButton("MAPA 4 ( Jungla )");
+        SelecMapa4.setBounds(740, 550, 300, 25);
         SelecMapa4.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
         SelecMapa4.setForeground(Color.BLACK);
         SelecMapa4.setBackground(Color.WHITE);
@@ -97,7 +99,7 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         Image MAPA1 = loadImage("bg_volcano.png");
         g.drawImage(MAPA1, 230, 100, 570, 350, 0, 0, 1280, 720, this);
         Image volcan = loadImage("volcangrande.png");
-        g.drawImage(volcan, 230, 100,570,400,0,0, 1280, 1280, this);
+        g.drawImage(volcan, 230, 100-20,570,400-20,0,0, 1280, 1280, this);
         
         
         Image MAPA2 = loadImage("Mapa_1Final.png");
@@ -105,11 +107,14 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         
         Image MAPA3 = loadImage("background.png");
         Image MAPA3addOn = loadImage("middleground.png");
-        g.drawImage(MAPA3, 230, 350, 570, 580, 0, 0, 384, 288, this);
-        g.drawImage(MAPA3addOn, 230, 350, 570, 580, 0, 0, 384, 288, this);
+        g.drawImage(MAPA3, 230, 350+10, 570, 580+10, 0, 0, 384, 288, this);
+        g.drawImage(MAPA3addOn, 230, 350, 570, 580+10, 0, 0, 384, 288, this);
         
-        Image MAPA4 = loadImage("Mapa_1Final.png");
-        g.drawImage(MAPA4, 700, 350, 1080, 580, 0, 0, 639, 505, this);
+        Image MAPA4 = loadImage("background_1.png");
+        Image MAPA4addon = loadImage("middleground_1.png");
+        g.drawImage(MAPA4, 700, 350+10, 1080, 580+10, 0, 0, 384/2, 240, this);
+        g.drawImage(MAPA4addon, 700, 350+10, 1080, 580+10, 0, 0, 384, 240, this);
+        
     }
     
     @Override
@@ -131,9 +136,9 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
             mapaCiudad.setVisible(true);
         }
         if(e.getSource() == SelecMapa4){
-            mapa1 = new ExeMapa_1();
+           mapaJungla = new ExeMapaJungla();
             ventana.dispose(); 
-            mapa1.setVisible(true);
+            mapaJungla.setVisible(true);
         }
         if(e.getSource() == Devolver){
             ventanaMain = new PPOOMAIN();
