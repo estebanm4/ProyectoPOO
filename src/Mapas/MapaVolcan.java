@@ -128,7 +128,13 @@ public class MapaVolcan extends JPanel implements ActionListener {
 
         Image piso2 = loadImage("volcano_pack_alt_07.png");
         g.drawImage(piso2, 128 * 8, piso, null);
-
+        
+        //
+        g.drawRect(125, 555, 645, 20);
+        g.drawRect(895, 555, 252, 20);
+        g.drawRect(195, 260, 375, 20);
+        g.drawRect(833, 390, 255, 20);
+        //
         Image pisogen = loadImage("volcano_pack_alt_05.png");
         for (j = 128 * 2; j <= 4 * 128; j = j + 128) {
             g.drawImage(pisogen, j, piso, null);

@@ -60,6 +60,37 @@ public class Mapa_1 extends JPanel  implements ActionListener {
         Image fondo = loadImage("Mapa_1Final.png");
         
         g.drawImage(fondo, x, y, 1280, 720,this);
+        g.setColor(Color.white);
+        g.drawRect(320,165,450,0);
+        g.setColor(Color.red);
+        g.drawRect(830,165,130,0);
+        g.setColor(Color.blue);
+        g.drawRect(0,618,390,0);
+        g.setColor(Color.yellow);
+        g.drawRect(0,575,125,0);
+        g.setColor(Color.orange);
+        g.drawRect(65,300,125,0);
+        g.setColor(Color.gray);
+        g.drawRect(315,395,125,0);
+        g.setColor(Color.white);
+        g.drawRect(230,485,125,0);
+        g.setColor(Color.CYAN);
+        g.drawRect(700,440,125,0);
+        g.setColor(Color.MAGENTA);
+        g.drawRect(630,575,275,0);
+        g.setColor(Color.PINK);
+        g.drawRect(830,528,70,0);
+        g.setColor(Color.red);
+        g.drawRect(1025,620,250,0);
+        g.setColor(Color.blue);
+        g.drawRect(1018,348,145,0);
+        g.setColor(Color.red);
+        g.drawRect(1150,392,145,0);
+        g.setColor(Color.yellow);
+        g.drawRect(1230,170,60,0);
+        g.setColor(Color.black);    //Escalera
+        g.drawRect(800,163,0,275);
+        
     }
 
    

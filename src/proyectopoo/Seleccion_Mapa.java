@@ -65,7 +65,7 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         SelecMapa2.addActionListener(this);
         this.add(SelecMapa2);
         
-        SelecMapa3 = new JButton("MAPA 3 ( Ciudad Gótica )");
+        SelecMapa3 = new JButton("MAPA 3 ( CIUDAD DEL OLVIDO )");
         SelecMapa3.setBounds(250, 550, 300, 25);
         SelecMapa3.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
         SelecMapa3.setForeground(Color.BLACK);
@@ -73,7 +73,7 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         SelecMapa3.addActionListener(this);
         this.add(SelecMapa3);
         
-        SelecMapa4 = new JButton("MAPA 4 ( Jungla )");
+        SelecMapa4 = new JButton("MAPA 4 ( ISLA SKULL )");
         SelecMapa4.setBounds(740, 550, 300, 25);
         SelecMapa4.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
         SelecMapa4.setForeground(Color.BLACK);
