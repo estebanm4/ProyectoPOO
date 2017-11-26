@@ -9,6 +9,7 @@ package proyectopoo;
  *
  * @author lenovo
  */
+import java.io.IOException;
 import javax.swing.JFrame;
 /**
  * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
@@ -16,11 +17,11 @@ import javax.swing.JFrame;
 public class PPOOMAIN extends JFrame{ 
     
     // Atributos
-    public PPOOMAIN() {
+    public PPOOMAIN()  {
         initUI();
     }
 
-    private void initUI() {
+    private void initUI()  {
         add(new Menu_Inicio(this));
         setSize(1296, 750);
         setTitle("Ejercicio 1");

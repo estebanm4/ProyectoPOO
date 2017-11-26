@@ -13,16 +13,20 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Menu_Inicio extends JPanel implements ActionListener {
 
     private JButton BotonJUGAR; // Prueba
     private JButton BotonCONFIGURACIONES; // Prueba
+    private JButton BotonMusicPlay; 
+    private JButton BotonMusicStop;
+    
     
     private JFrame ventana; // Prueba
     
@@ -30,13 +34,13 @@ public class Menu_Inicio extends JPanel implements ActionListener {
     private ExeMapa_1 mapa1; // Prueba
     private ExeConfig configuraciones;
     private ExeSelecMapa seleccionMapa;
-    
-    public Menu_Inicio(JFrame ventana) {
+        
+    public Menu_Inicio(JFrame ventana)  {
         this.ventana = ventana;
         initBoard();
     }
 
-    private void initBoard() {
+    private void initBoard()  {
         setLayout(null); // Colocar elementos en cualquier lado
         setBackground(Color.WHITE);
        
@@ -56,6 +60,21 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         BotonCONFIGURACIONES.addActionListener(this);
         this.add(BotonCONFIGURACIONES);
         
+        BotonMusicPlay = new JButton("Play");
+        BotonMusicPlay.setBounds(530, 600, 80, 30);
+        BotonMusicPlay.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+        BotonMusicPlay.setForeground(Color.BLACK);
+        BotonMusicPlay.setBackground(Color.WHITE);
+        BotonMusicPlay.addActionListener(this);
+        this.add(BotonMusicPlay);
+        
+        BotonMusicStop = new JButton("Stop");
+        BotonMusicStop.setBounds(630, 600, 80, 30);
+        BotonMusicStop.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+        BotonMusicStop.setForeground(Color.BLACK);
+        BotonMusicStop.setBackground(Color.WHITE);
+        BotonMusicStop.addActionListener(this);
+        this.add(BotonMusicStop);
     }
 
     @Override
