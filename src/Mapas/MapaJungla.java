@@ -99,7 +99,6 @@ public class MapaJungla extends JPanel implements ActionListener {
 
         g.setColor(Color.CYAN); // Este está por fuera de la pantalla, para que cuando se detecte la colisión, el personaje se detenda
         g.drawRect(0, 0, 1280, 720);
-
     }
 
     public Image loadImage(String imageName) {
