@@ -58,6 +58,38 @@ public class MapaCiudad extends JPanel implements ActionListener {
         Image fondo = loadImage("environment-preview.png");
         g.drawImage(fondo, 0, 0, 1280,720, 0+500, 0, 600+500, 288, this);
         
+        
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(1155, 560, 60, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(1140, 480, 65, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(0, 630, 1253, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(710, 463, 165, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(530, 463, 70, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(490, 550, 150, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(845, 383, 135, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(100, 555, 113, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(268, 485, 50, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(405, 410, 50, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(255, 340, 80, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(155, 275, 50, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(225, 185, 80, 0);
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(35, 185, 80, 0);
+         g.setColor(Color.CYAN); // Este está por fuera de la pantalla, para que cuando se detecte la colisión, el personaje se detenda
+        g.drawRect(0, 0, 1280, 720);
+        
     }
 
     public Image loadImage(String imageName) {
