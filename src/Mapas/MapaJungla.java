@@ -65,6 +65,9 @@ public class MapaJungla extends JPanel implements ActionListener {
         g.drawImage(piranha, 170, 355,-61,45, this);
         Image slug = loadImage("slug.gif");
         g.drawImage(slug, 170+425, 380,32,21, this);
+        Image plat = loadImage("tileset.png");
+        g.drawImage(plat, 820, 300, 820+66, 300+80, 0, 160, 30+5, 190+5, this);
+        g.drawImage(plat, 400, 200, 400+66, 200+80, 0, 160, 30+5, 190+5, this);
     }
 
     public Image loadImage(String imageName) {
