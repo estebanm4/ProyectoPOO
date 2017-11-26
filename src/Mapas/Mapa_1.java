@@ -90,6 +90,7 @@ public class Mapa_1 extends JPanel  implements ActionListener {
         g.drawRect(1230,170,60,0);
         g.setColor(Color.black);    //Escalera
         g.drawRect(800,163,0,275);
+        
     }
 
    
