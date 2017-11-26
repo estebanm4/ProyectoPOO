@@ -90,7 +90,8 @@ public class Mapa_1 extends JPanel  implements ActionListener {
         g.drawRect(1230,170,60,0);
         g.setColor(Color.black);    //Escalera
         g.drawRect(800,163,0,275);
-        
+        g.setColor(Color.blue); // Este está por fuera de la pantalla, para que cuando se detecte la colisión, el personaje muera
+        g.drawRect(0, 0, 1280, 720);
     }
 
    
