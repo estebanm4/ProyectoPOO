@@ -9,7 +9,6 @@ package proyectopoo;
  *
  * @author lenovo
  */
-import java.io.IOException;
 import javax.swing.JFrame;
 /**
  * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz

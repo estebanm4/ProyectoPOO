@@ -13,8 +13,6 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,8 +24,7 @@ public class Menu_Inicio extends JPanel implements ActionListener {
     private JButton BotonCONFIGURACIONES; // Prueba
     private JButton BotonMusicPlay; 
     private JButton BotonMusicStop;
-    
-    
+     
     private JFrame ventana; // Prueba
     
     private ExeMapaVolcan mapaVolcan; // Prueba
