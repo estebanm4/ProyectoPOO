@@ -93,6 +93,7 @@ public class Menu_Inicio extends JPanel implements ActionListener {
             configuraciones = new ExeConfig();
             ventana.dispose(); 
             configuraciones.setVisible(true);
+            
             //JOptionPane.showMessageDialog(null,"" + getWidth()); 
             //JOptionPane.showMessageDialog(null,"" + getHeight());
         }
