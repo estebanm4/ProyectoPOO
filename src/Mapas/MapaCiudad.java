@@ -29,7 +29,7 @@ public class MapaCiudad extends JPanel implements ActionListener {
     private ExeSelecMapa ventanaVolverSelecMapa;
     private JButton VolverSelecMapa;
     private JFrame ventana;
-            
+
     public MapaCiudad(JFrame ventana) {
         this.ventana = ventana;
         this.secuencia = 0;
@@ -39,7 +39,7 @@ public class MapaCiudad extends JPanel implements ActionListener {
     private void initMapaVolcan() {
         setBackground(Color.WHITE);
         setLayout(null);
-        
+
         VolverSelecMapa = new JButton(" SALIR ");
         VolverSelecMapa.setBounds(585, 640, 100, 25);
         VolverSelecMapa.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
@@ -47,7 +47,7 @@ public class MapaCiudad extends JPanel implements ActionListener {
         VolverSelecMapa.setBackground(Color.WHITE);
         VolverSelecMapa.addActionListener(this);
         this.add(VolverSelecMapa);
-        
+
         this.timer = new Timer(delay, this);
         timer.start();
     }
@@ -56,9 +56,8 @@ public class MapaCiudad extends JPanel implements ActionListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Image fondo = loadImage("environment-preview.png");
-        g.drawImage(fondo, 0, 0, 1280,720, 0+500, 0, 600+500, 288, this);
-        
-        
+        g.drawImage(fondo, 0, 0, 1280, 720, 0 + 500, 0, 600 + 500, 288, this);
+
         g.setColor(Color.DARK_GRAY);
         g.drawRect(1155, 560, 60, 0);
         g.setColor(Color.DARK_GRAY);
@@ -87,9 +86,9 @@ public class MapaCiudad extends JPanel implements ActionListener {
         g.drawRect(225, 185, 80, 0);
         g.setColor(Color.DARK_GRAY);
         g.drawRect(35, 185, 80, 0);
-         g.setColor(Color.CYAN); // Este está por fuera de la pantalla, para que cuando se detecte la colisión, el personaje se detenda
+        g.setColor(Color.CYAN); // Este está por fuera de la pantalla, para que cuando se detecte la colisión, el personaje se detenda
         g.drawRect(0, 0, 1280, 720);
-        
+
     }
 
     public Image loadImage(String imageName) {
@@ -100,12 +99,12 @@ public class MapaCiudad extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
         repaint();
-        if(e.getSource() == VolverSelecMapa){            
+        if (e.getSource() == VolverSelecMapa) {
             ventanaVolverSelecMapa = new ExeSelecMapa();
             ventana.dispose();
-            ventanaVolverSelecMapa.setVisible(true); 
+            ventanaVolverSelecMapa.setVisible(true);
         }
     }
 
