@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Mapas;
 
 import java.awt.Color;
@@ -29,7 +24,7 @@ public class MapaJungla extends JPanel implements ActionListener {
     private ExeSelecMapa ventanaVolverSelecMapa;
     private JButton VolverSelecMapa;
     private JFrame ventana;
-            
+
     public MapaJungla(JFrame ventana) {
         this.ventana = ventana;
         this.secuencia = 0;
@@ -39,7 +34,7 @@ public class MapaJungla extends JPanel implements ActionListener {
     private void initMapaVolcan() {
         setBackground(Color.WHITE);
         setLayout(null);
-        
+
         VolverSelecMapa = new JButton(" SALIR ");
         VolverSelecMapa.setBounds(585, 640, 100, 25);
         VolverSelecMapa.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
@@ -47,7 +42,7 @@ public class MapaJungla extends JPanel implements ActionListener {
         VolverSelecMapa.setBackground(Color.WHITE);
         VolverSelecMapa.addActionListener(this);
         this.add(VolverSelecMapa);
-        
+
         this.timer = new Timer(delay, this);
         timer.start();
     }
@@ -56,18 +51,55 @@ public class MapaJungla extends JPanel implements ActionListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Image fondo = loadImage("environment-preview_1.png");
-        g.drawImage(fondo, 0, 0, 1280,720, 0+500, 0, 600+500, 288, this);
+        g.drawImage(fondo, 0, 0, 1280, 720, 0 + 500, 0, 600 + 500, 288, this);
         Image bee = loadImage("bee.gif");
         g.drawImage(bee, 1125, 350, this);
         g.drawImage(bee, 1125, 175, this);
-        g.drawImage(bee, 1000, 150,-37,39, this);
+        g.drawImage(bee, 1000, 150, -37, 39, this);
         Image piranha = loadImage("piranha-plant.gif");
-        g.drawImage(piranha, 170, 355,-61,45, this);
+        g.drawImage(piranha, 170, 355, -61, 45, this);
         Image slug = loadImage("slug.gif");
-        g.drawImage(slug, 170+425, 380,32,21, this);
+        g.drawImage(slug, 170 + 425, 380, 32, 21, this);
         Image plat = loadImage("tileset.png");
-        g.drawImage(plat, 820, 300, 820+66, 300+80, 0, 160, 30+5, 190+5, this);
-        g.drawImage(plat, 400, 200, 400+66, 200+80, 0, 160, 30+5, 190+5, this);
+        g.drawImage(plat, 820, 300, 820 + 66, 300 + 80, 0, 160, 30 + 5, 190 + 5, this);
+        g.drawImage(plat, 400, 200, 400 + 66, 200 + 80, 0, 160, 30 + 5, 190 + 5, this);
+
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(60, 320, 65, 0); //H
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(125, 320, 0, 80); //V
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(125, 400, 35, 0); //H
+
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(165, 565, 160, 0); //Muerte espinas
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(335, 320, 65, 0); //H
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(400, 320, 0, 40); //V
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(400, 360, 75, 0); //H
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(475, 360, 0, 40); //V
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(475, 400, 230, 0); //H
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(638, 475, 0, 125); //V
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(638, 600, 342, 0); //H
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(980, 560, 0, 40); //V
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(980, 560, 275, 0); //H
+
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(400, 200, 60, 0); //Plataforma 1
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(820, 300, 60, 0); //Plataforma 2
+
+        g.setColor(Color.CYAN); // Este está por fuera de la pantalla, para que cuando se detecte la colisión, el personaje se detenda
+        g.drawRect(0, 0, 1280, 720);
+
     }
 
     public Image loadImage(String imageName) {
@@ -78,12 +110,12 @@ public class MapaJungla extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
         repaint();
-        if(e.getSource() == VolverSelecMapa){            
+        if (e.getSource() == VolverSelecMapa) {
             ventanaVolverSelecMapa = new ExeSelecMapa();
             ventana.dispose();
-            ventanaVolverSelecMapa.setVisible(true); 
+            ventanaVolverSelecMapa.setVisible(true);
         }
     }
 
