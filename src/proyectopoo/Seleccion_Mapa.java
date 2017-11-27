@@ -15,6 +15,14 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -32,6 +40,13 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
     private JButton SelecMapa4; // Prueba
     private JButton Devolver; // Prueba
     
+    private int contadorMapa1;
+     private int contadorMapa2;
+      private int contadorMapa3;
+       private int contadorMapa4;
+            
+       private File file;
+    
     private PPOOMAIN ventanaMain;
     private ExeMapaJungla mapaJungla;
     private ExeMapaCiudad mapaCiudad;
@@ -40,9 +55,29 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
     
     private JFrame ventana; // Prueba
 
-    public Seleccion_Mapa(JFrame ventana) {
+    public Seleccion_Mapa(JFrame ventana) throws IOException {
         this.ventana = ventana;
         initBoard();
+        file = new File("permanencia.txt");
+        if(!file.exists()){
+            
+                file.createNewFile();
+        }
+        
+        Scanner s = new Scanner(file);
+        s.useDelimiter(",");
+        while (s.hasNext()){
+            
+            String scontadorMapa1=s.next().trim();
+            String scontadorMapa2=s.next().trim();
+            String scontadorMapa3=s.next().trim();
+            String scontadorMapa4=s.next().trim();
+            contadorMapa1= Integer.parseInt(scontadorMapa1);
+            contadorMapa2= Integer.parseInt(scontadorMapa2);
+            contadorMapa3= Integer.parseInt(scontadorMapa3);
+            contadorMapa4= Integer.parseInt(scontadorMapa4);
+        }
+        
     }
 
     private void initBoard() {
@@ -96,56 +131,79 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         Image fondo = loadImage("explosion_nuclear.jpg");
         g.drawImage(fondo, 0, 0, 1280, 720, 0, 0, 670, 413, this);
         
+        
         Image MAPA1 = loadImage("bg_volcano.png");
         g.drawImage(MAPA1, 230, 100, 570, 350, 0, 0, 1280, 720, this);
         Image volcan = loadImage("volcangrande.png");
         g.drawImage(volcan, 230, 100-20,570,400-20,0,0, 1280, 1280, this);
+        g.drawString(Integer.toString(contadorMapa1), 570, 350-10);
         
         
         Image MAPA2 = loadImage("Mapa_1Final.png");
         g.drawImage(MAPA2, 700, 100, 1080, 350, 0, 0, 639, 505, this);
+        g.drawString(Integer.toString(contadorMapa2), 1080, 350-10);
         
         Image MAPA3 = loadImage("background.png");
         Image MAPA3addOn = loadImage("middleground.png");
         g.drawImage(MAPA3, 230, 350+10, 570, 580+10, 0, 0, 384, 288, this);
         g.drawImage(MAPA3addOn, 230, 350, 570, 580+10, 0, 0, 384, 288, this);
+        g.drawString(Integer.toString(contadorMapa3), 570, 580);
         
         Image MAPA4 = loadImage("background_1.png");
         Image MAPA4addon = loadImage("middleground_1.png");
         g.drawImage(MAPA4, 700, 350+10, 1080, 580+10, 0, 0, 384/2, 240, this);
         g.drawImage(MAPA4addon, 700, 350+10, 1080, 580+10, 0, 0, 384, 240, this);
-        
+        g.drawString(Integer.toString(contadorMapa4), 1080, 580);
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-  
-        if(e.getSource() == SelecMapa1){
-            mapaVolcan = new ExeMapaVolcan();
-            ventana.dispose(); 
-            mapaVolcan.setVisible(true);
-        }
-        if(e.getSource() == SelecMapa2){
-            mapa1 = new ExeMapa_1();
-            ventana.dispose(); 
-            mapa1.setVisible(true);
-        }
-        if(e.getSource() == SelecMapa3){
-            mapaCiudad = new ExeMapaCiudad();
-            ventana.dispose(); 
-            mapaCiudad.setVisible(true);
-        }
-        if(e.getSource() == SelecMapa4){
-           mapaJungla = new ExeMapaJungla();
-            ventana.dispose(); 
-            mapaJungla.setVisible(true);
-        }
-        if(e.getSource() == Devolver){
-            ventanaMain = new PPOOMAIN();
-            ventana.dispose();
-            ventanaMain.setVisible(true); 
-            //JOptionPane.showMessageDialog(null,"" + getWidth()); 
-            //JOptionPane.showMessageDialog(null,"" + getHeight());
+        
+        try {
+            PrintStream xs;
+            
+            xs = new PrintStream(file);
+            
+            if(e.getSource() == SelecMapa1){            
+                mapaVolcan = new ExeMapaVolcan();
+                ventana.dispose();
+                mapaVolcan.setVisible(true);
+                this.contadorMapa1= contadorMapa1+1;
+            }
+            if(e.getSource() == SelecMapa2){
+                mapa1 = new ExeMapa_1();
+                ventana.dispose();
+                mapa1.setVisible(true);
+                this.contadorMapa2++;
+            }
+            if(e.getSource() == SelecMapa3){
+                mapaCiudad = new ExeMapaCiudad();
+                ventana.dispose();
+                mapaCiudad.setVisible(true);
+                this.contadorMapa3++;
+            }
+            if(e.getSource() == SelecMapa4){
+                mapaJungla = new ExeMapaJungla();
+                ventana.dispose();
+                mapaJungla.setVisible(true);
+                this.contadorMapa4++;
+            }
+            if(e.getSource() == Devolver){
+                ventanaMain = new PPOOMAIN();
+                ventana.dispose();
+                ventanaMain.setVisible(true);
+                //JOptionPane.showMessageDialog(null,"" + getWidth());
+                //JOptionPane.showMessageDialog(null,"" + getHeight());
+                
+                
+            }
+                xs.println(this.contadorMapa1 + "," + this.contadorMapa2+ "," +this.contadorMapa3+","+this.contadorMapa4);
+                xs.close();
+                
+                
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Seleccion_Mapa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
