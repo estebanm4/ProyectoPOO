@@ -15,9 +15,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.sound.sampled.Clip;
 import java.io.File;
+import java.io.IOException;
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -103,6 +105,15 @@ public class Menu_Inicio extends JPanel implements ActionListener {
             //JOptionPane.showMessageDialog(null,"" + getWidth()); 
             //JOptionPane.showMessageDialog(null,"" + getHeight());
         }
+        if(e.getSource() == BotonMusicPlay){            
+           try {           
+            sonidoInicio= AudioSystem.getClip();
+            sonidoInicio.open(AudioSystem.getAudioInputStream(new File("Blackmoor_Colossus_Loop.wav")));                                                            
+            sonidoInicio.start();             
+            sonidoInicio.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (Exception a) {
+             System.out.println(a);
+        }}
     }
     
     public Image loadImage(String imageName) {
@@ -110,18 +121,4 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         Image image = ii.getImage();
         return image;
     }
-    public static void cargarSonidoDeInicio(){
-         try {           
-            sonidoInicio= AudioSystem.getClip();
-            sonidoInicio.open(AudioSystem.getAudioInputStream(new File("Blackmoor_Colossus.wav")));                                                            
-            sonidoInicio.start();             
-            sonidoInicio.loop(Clip.LOOP_CONTINUOUSLY);
-        } catch (Exception e) {
-             System.out.println(e);
-        }        
-    }
-     
-    public static void detenerSonidoInicio(){
-        sonidoInicio.stop();
-    } 
 }
