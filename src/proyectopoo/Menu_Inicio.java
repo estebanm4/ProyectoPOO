@@ -13,6 +13,13 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.sound.sampled.Clip;
+import java.io.File;
+import java.io.IOException;
+import javax.sound.sampled.AudioFileFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,6 +38,8 @@ public class Menu_Inicio extends JPanel implements ActionListener {
     private ExeMapa_1 mapa1; // Prueba
     private ExeConfig configuraciones;
     private ExeSelecMapa seleccionMapa;
+    static Clip sonidoInicio;    
+    static Clip sonidoPelea1;
         
     public Menu_Inicio(JFrame ventana)  {
         this.ventana = ventana;
@@ -57,21 +66,14 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         BotonCONFIGURACIONES.addActionListener(this);
         this.add(BotonCONFIGURACIONES);
         
-        BotonMusicPlay = new JButton("Play");
-        BotonMusicPlay.setBounds(530, 600, 80, 30);
-        BotonMusicPlay.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-        BotonMusicPlay.setForeground(Color.BLACK);
-        BotonMusicPlay.setBackground(Color.WHITE);
-        BotonMusicPlay.addActionListener(this);
-        this.add(BotonMusicPlay);
-        
-        BotonMusicStop = new JButton("Stop");
-        BotonMusicStop.setBounds(630, 600, 80, 30);
-        BotonMusicStop.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-        BotonMusicStop.setForeground(Color.BLACK);
-        BotonMusicStop.setBackground(Color.WHITE);
-        BotonMusicStop.addActionListener(this);
-        this.add(BotonMusicStop);
+        try {           
+            sonidoInicio= AudioSystem.getClip();
+            sonidoInicio.open(AudioSystem.getAudioInputStream(new File("Blackmoor_Colossus_Loop.wav")));                                                            
+            sonidoInicio.start();             
+            sonidoInicio.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (Exception a) {
+             System.out.println(a);
+        }
     }
 
     @Override
@@ -93,7 +95,6 @@ public class Menu_Inicio extends JPanel implements ActionListener {
             configuraciones = new ExeConfig();
             ventana.dispose(); 
             configuraciones.setVisible(true);
-            
             //JOptionPane.showMessageDialog(null,"" + getWidth()); 
             //JOptionPane.showMessageDialog(null,"" + getHeight());
         }
@@ -104,5 +105,4 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         Image image = ii.getImage();
         return image;
     }
-
 }
