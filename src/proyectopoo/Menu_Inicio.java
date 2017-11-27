@@ -13,6 +13,11 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.sound.sampled.Clip;
+import java.io.File;
+import javax.sound.sampled.AudioFileFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,6 +36,8 @@ public class Menu_Inicio extends JPanel implements ActionListener {
     private ExeMapa_1 mapa1; // Prueba
     private ExeConfig configuraciones;
     private ExeSelecMapa seleccionMapa;
+    static Clip sonidoInicio;    
+    static Clip sonidoPelea1;
         
     public Menu_Inicio(JFrame ventana)  {
         this.ventana = ventana;
@@ -93,7 +100,6 @@ public class Menu_Inicio extends JPanel implements ActionListener {
             configuraciones = new ExeConfig();
             ventana.dispose(); 
             configuraciones.setVisible(true);
-            
             //JOptionPane.showMessageDialog(null,"" + getWidth()); 
             //JOptionPane.showMessageDialog(null,"" + getHeight());
         }
@@ -104,5 +110,18 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         Image image = ii.getImage();
         return image;
     }
-
+    public static void cargarSonidoDeInicio(){
+         try {           
+            sonidoInicio= AudioSystem.getClip();
+            sonidoInicio.open(AudioSystem.getAudioInputStream(new File("Blackmoor_Colossus.wav")));                                                            
+            sonidoInicio.start();             
+            sonidoInicio.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (Exception e) {
+             System.out.println(e);
+        }        
+    }
+     
+    public static void detenerSonidoInicio(){
+        sonidoInicio.stop();
+    } 
 }

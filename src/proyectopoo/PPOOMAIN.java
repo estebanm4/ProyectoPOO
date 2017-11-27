@@ -10,12 +10,14 @@ package proyectopoo;
  * @author lenovo
  */
 import javax.swing.JFrame;
+
 /**
  * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
  */
 public class PPOOMAIN extends JFrame{ 
     
     // Atributos
+    
     public PPOOMAIN()  {
         initUI();
     }

@@ -126,7 +126,6 @@ public class Configuraciones extends JPanel implements ActionListener, Serializa
         JTACONF.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
 	JTACONF.setBounds(100, 80, 500, 300);
 	CONFIGURACIONES.add(JTACONF);
-        
     }
 
     @Override
@@ -138,7 +137,6 @@ public class Configuraciones extends JPanel implements ActionListener, Serializa
     
     @Override
     public void actionPerformed(ActionEvent e) {
-   
         if(e.getSource() == botonVolver){
             ventanaMain = new PPOOMAIN();
             ventana.dispose(); 
