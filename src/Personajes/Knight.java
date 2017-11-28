@@ -12,7 +12,7 @@ public class Knight extends Personajes {
 
     public Knight(int vida, int posX, int posY, int dx, int dy, int piso) {
         super(vida, posX, posY, dx, dy, piso);
-        Image knight = this.loadImage("Archer.png");
+        Image knight = this.loadImage("0.png");
         this.sprite = knight;
     }
 

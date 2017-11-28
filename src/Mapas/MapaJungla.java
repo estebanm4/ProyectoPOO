@@ -1,6 +1,7 @@
 package Mapas;
 
 import Personajes.Arquero;
+import Personajes.Knight;
 import Personajes.Personajes;
 import java.awt.Color;
 import java.awt.Font;
@@ -37,7 +38,7 @@ public class MapaJungla extends JPanel implements ActionListener {
         this.ventana = ventana;
         this.secuencia = 0;
         initMapaVolcan();
-        this.personaje = new Arquero(10, 20,20,10,10,600);
+        this.personaje = new Knight(10, 20,20,10,10,600);
         setFocusable(true);
         addKeyListener(new EventosTeclado());
     }
