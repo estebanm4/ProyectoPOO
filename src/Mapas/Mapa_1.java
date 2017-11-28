@@ -122,9 +122,9 @@ public class Mapa_1 extends JPanel  implements ActionListener {
         if(this.personaje.getPosY() < this.piso){
             this.personaje.setPosY(this.personaje.getPosY()+10);
         }
-        if(this.enemigo1.getPosY() < this.piso){
-            this.enemigo1.setPosY(this.enemigo1.getPosY()+10);
-        }
+        //if(this.enemigo1.getPosY() < this.piso){
+           // this.enemigo1.setPosY(this.enemigo1.getPosY()+10);
+        //}
 //        if(this.enemigo2.getPosY() < this.piso){
 //            this.enemigo2.setPosY(this.enemigo2.getPosY()+10);
 //        }
