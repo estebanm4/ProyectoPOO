@@ -1,4 +1,5 @@
 package Mapas;
+
 /**
  * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
  */
@@ -22,14 +23,14 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 import proyectopoo.ExeSelecMapa;
 
-public class MapaCiudad extends JPanel implements ActionListener{
+public class MapaCiudad extends JPanel implements ActionListener {
 
     private final int piso = 530;
     private final int delay = 40;
     private Timer timer;
-    private int secuencia;
-    private int x = 0;
-    
+    private final int secuencia;
+    private final int x = 0;
+
     private Personajes personaje;
 
     private ExeSelecMapa ventanaVolverSelecMapa;
@@ -40,10 +41,26 @@ public class MapaCiudad extends JPanel implements ActionListener{
         this.ventana = ventana;
         this.secuencia = 0;
         initMapaVolcan();
-        this.personaje = new Arquero(10, 20,20,10,10,600);
+        this.personaje = new Arquero(10, 20, 20, 10, 10, 600);
+        //Hilos hilo1 = new Hilos("Asd");
         setFocusable(true);
         addKeyListener(new EventosTeclado());
     }
+
+    private void dibujo (Personajes personaje1) {
+        new Thread() {
+            @Override
+            public void run() {
+                setFocusable(true);
+        addKeyListener(new EventosTeclado());
+            }
+        }.start();
+    }
+    
+    private void dibujar(Personajes personajes){
+        dibujo(this.personaje);
+    }
+   
 
     private void initMapaVolcan() {
         setBackground(Color.WHITE);
@@ -111,9 +128,9 @@ public class MapaCiudad extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        if(this.personaje.getPosY() < this.piso){
-            this.personaje.setPosY(this.personaje.getPosY()+10);
+
+        if (this.personaje.getPosY() < this.piso) {
+            this.personaje.setPosY(this.personaje.getPosY() + 10);
         }
 //        if(this.enemigo1.getPosY() < this.piso){
 //            this.enemigo1.setPosY(this.enemigo1.getPosY()+10);
@@ -131,44 +148,43 @@ public class MapaCiudad extends JPanel implements ActionListener{
             } catch (IOException ex) {
                 Logger.getLogger(MapaCiudad.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
             ventanaVolverSelecMapa.setVisible(true);
             ventana.dispose();
         }
     }
-    
-    private class EventosTeclado implements KeyListener{
+
+    private class EventosTeclado implements KeyListener {
 
         @Override
         public void keyTyped(KeyEvent ke) {
-        int key = ke.getKeyCode();    
-        
+            int key = ke.getKeyCode();
+
         }
 
         @Override
         public void keyPressed(KeyEvent ke) {
             int key = ke.getKeyCode();
-            if(key == KeyEvent.VK_A){
+            if (key == KeyEvent.VK_A) {
                 personaje.moverIzquierda();
                 System.err.println("A");
             }
-            if(key == KeyEvent.VK_D){
+            if (key == KeyEvent.VK_D) {
                 personaje.moverDerecha();
                 System.err.println("D");
             }
-            
-            
+
         }
 
         @Override
         public void keyReleased(KeyEvent ke) {
             int key = ke.getKeyCode();
-            if(key == KeyEvent.VK_W){
+            if (key == KeyEvent.VK_W) {
                 personaje.saltar();
                 System.err.println("W");
             }
         }
-        
+
     }
-   
+
 }

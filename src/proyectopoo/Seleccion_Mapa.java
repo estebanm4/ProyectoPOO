@@ -54,14 +54,11 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         initBoard();
         file = new File("permanencia.txt");
         if(!file.exists()){
-            
                 file.createNewFile();
         }
-        
         Scanner s = new Scanner(file);
         s.useDelimiter(",");
         /*while (s.hasNext()){
-            
             String scontadorMapa1=s.next().trim();
             String scontadorMapa2=s.next().trim();
             String scontadorMapa3=s.next().trim();
@@ -70,8 +67,7 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
             contadorMapa2= Integer.parseInt(scontadorMapa2);
             contadorMapa3= Integer.parseInt(scontadorMapa3);
             contadorMapa4= Integer.parseInt(scontadorMapa4);
-        }*/
-        
+        }*/  
     }
 
     private void initBoard() {
@@ -125,13 +121,11 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         Image fondo = loadImage("explosion_nuclear.jpg");
         g.drawImage(fondo, 0, 0, 1280, 720, 0, 0, 670, 413, this);
         
-        
         Image MAPA1 = loadImage("bg_volcano.png");
         g.drawImage(MAPA1, 230, 100, 570, 350, 0, 0, 1280, 720, this);
         Image volcan = loadImage("volcangrande.png");
         g.drawImage(volcan, 230, 100-20,570,400-20,0,0, 1280, 1280, this);
         g.drawString(Integer.toString(contadorMapa1), 570, 350-10);
-        
         
         Image MAPA2 = loadImage("Mapa_1Final.png");
         g.drawImage(MAPA2, 700, 100, 1080, 350, 0, 0, 639, 505, this);
@@ -188,14 +182,9 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
                 ventanaMain.setVisible(true);
                 //JOptionPane.showMessageDialog(null,"" + getWidth());
                 //JOptionPane.showMessageDialog(null,"" + getHeight());
-                
-                
             }
                 xs.println(this.contadorMapa1 + "," + this.contadorMapa2+ "," +this.contadorMapa3+","+this.contadorMapa4);
-                xs.close();
-                
-                
-            
+                xs.close();  
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Seleccion_Mapa.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -206,5 +195,4 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         Image image = ii.getImage();
         return image;
     }
-
 }

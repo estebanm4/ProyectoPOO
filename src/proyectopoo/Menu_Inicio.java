@@ -1,7 +1,5 @@
 package proyectopoo;
 
-import Mapas.ExeMapaVolcan;
-import Mapas.ExeMapa_1;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;

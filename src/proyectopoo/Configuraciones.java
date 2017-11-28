@@ -12,7 +12,6 @@ package proyectopoo;
     import javax.swing.ImageIcon;
     import javax.swing.JButton;
     import javax.swing.JFrame;
-    import javax.swing.JLabel;
     import javax.swing.JPanel;
     import javax.swing.JTabbedPane;
     import javax.swing.JTextArea;
@@ -72,16 +71,16 @@ public class Configuraciones extends JPanel implements ActionListener, Serializa
 	tabbedPane.addTab(" CONTROLES ", null, CONTROLES, null);
 	CONTROLES.setLayout(null);
         
-        JTextArea JTACTRL = new JTextArea("JUGADOR 2: "+"\n"+"\n"+
+        JTextArea JTACTRL1 = new JTextArea("JUGADOR 2: "+"\n"+"\n"+
                 " W ...  Saltar."+"\n"+
                 " A ...  Mover Hacia La Izquierda."+"\n"+
                 " D ...  Mover Hacia La Derecha."+"\n"+
                 " X ...  Usar Arma / Atacar."+"\n"+
                 " C ...  Recoger Arma. "+"\n"+
                 " V ...  Soltar Arma.", 10, 20);
-        JTACTRL.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
-	JTACTRL.setBounds(400, 80, 500, 300);
-	CONTROLES.add(JTACTRL);
+        JTACTRL1.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+	JTACTRL1.setBounds(400, 80, 500, 300);
+	CONTROLES.add(JTACTRL1);
         
         JTextArea JTACTRL2 = new JTextArea(" JUGADOR 1: "+"\n"+"\n"+
                 " Flecha Arriba ...  Saltar."+"\n"+

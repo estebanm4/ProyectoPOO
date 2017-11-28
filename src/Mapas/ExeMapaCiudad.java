@@ -13,7 +13,7 @@ public class ExeMapaCiudad extends JFrame {
     private void initUI() {
         add(new MapaCiudad(this));
         setSize(1280, 720);
-        setTitle("mapaciudad");
+        setTitle("La Ciudad de La Furia");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }    
