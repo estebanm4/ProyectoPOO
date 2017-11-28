@@ -5,12 +5,16 @@
  */
 package Mapas;
 
+import Personajes.Arquero;
+import Personajes.Personajes;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,6 +30,11 @@ public class MapaVolcan extends JPanel implements ActionListener {
     private int secuencia;
     private int x = 0;
 
+    private Personajes personaje;
+//    private Personajes enemigo1;
+//    private Personajes enemigo2;
+//    private Personajes enemigo3;
+    
     private ExeSelecMapa ventanaVolverSelecMapa;
     private JButton VolverSelecMapa;
     private JFrame ventana;
@@ -34,6 +43,9 @@ public class MapaVolcan extends JPanel implements ActionListener {
         this.ventana = ventana;
         this.secuencia = 0;
         initMapaVolcan();
+        this.personaje = new Arquero(10, 20,20,10,10,600);
+        setFocusable(true);
+        addKeyListener(new EventosTeclado());
     }
 
     private void initMapaVolcan() {
@@ -171,6 +183,11 @@ public class MapaVolcan extends JPanel implements ActionListener {
             g.drawImage(lava, j - x, piso + 32, this);
             
         }
+        
+        this.personaje.pintarPersonaje(g);
+//        this.enemigo1.pintarPersonaje(g);
+//        this.enemigo2.pintarPersonaje(g);
+//        this.enemigo3.pintarPersonaje(g);
     }
 
     public Image loadImage(String imageName) {
@@ -191,6 +208,20 @@ public class MapaVolcan extends JPanel implements ActionListener {
         if (x >= 128) {
             x = 0;
         }
+        
+        if(this.personaje.getPosY() < this.piso){
+            this.personaje.setPosY(this.personaje.getPosY()+10);
+        }
+//        if(this.enemigo1.getPosY() < this.piso){
+//            this.enemigo1.setPosY(this.enemigo1.getPosY()+10);
+//        }
+//        if(this.enemigo2.getPosY() < this.piso){
+//            this.enemigo2.setPosY(this.enemigo2.getPosY()+10);
+//        }
+//        if(this.enemigo3.getPosY() < this.piso){
+//            this.enemigo3.setPosY(this.enemigo3.getPosY()+10);
+//        }
+        
         repaint();
         if(e.getSource() == VolverSelecMapa){            
             ventanaVolverSelecMapa = new ExeSelecMapa();
@@ -199,4 +230,38 @@ public class MapaVolcan extends JPanel implements ActionListener {
         }
     }
 
+        private class EventosTeclado implements KeyListener{
+
+        @Override
+        public void keyTyped(KeyEvent ke) {
+        int key = ke.getKeyCode();    
+        
+        }
+
+        @Override
+        public void keyPressed(KeyEvent ke) {
+            int key = ke.getKeyCode();
+            if(key == KeyEvent.VK_A){
+                personaje.moverIzquierda();
+                System.err.println("A");
+            }
+            if(key == KeyEvent.VK_D){
+                personaje.moverDerecha();
+                System.err.println("D");
+            }
+            
+            
+        }
+
+        @Override
+        public void keyReleased(KeyEvent ke) {
+            int key = ke.getKeyCode();
+            if(key == KeyEvent.VK_W){
+                personaje.saltar();
+                System.err.println("W");
+            }
+        }
+        
+    }
+   
 }
