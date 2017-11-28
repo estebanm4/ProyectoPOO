@@ -1,5 +1,4 @@
 package Mapas;
-
 /**
  * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
  */
@@ -31,7 +30,7 @@ public class MapaCiudad extends JPanel implements ActionListener {
     private final int secuencia;
     private final int x = 0;
     private int xref1 = 530;
-    private int xref2 = 700;
+    private int xref2 = 700;    
     private Personajes personaje;
 
     private ExeSelecMapa ventanaVolverSelecMapa;
