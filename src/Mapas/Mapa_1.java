@@ -3,6 +3,7 @@ package Mapas;
  * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
  */
 import Personajes.Arquero;
+import Personajes.Knight_2;
 import Personajes.Personajes;
 import java.awt.Color;
 import java.awt.Font;
@@ -42,7 +43,7 @@ public class Mapa_1 extends JPanel  implements ActionListener {
         this.ventana = ventana;
         this.secuencia = 0;
         initBoard();
-        this.personaje = new Arquero(10, 20,20,10,10,600);
+        this.personaje = new Knight_2(10, 20,20,10,10,600);
         setFocusable(true);
         addKeyListener(new EventosTeclado());
     }

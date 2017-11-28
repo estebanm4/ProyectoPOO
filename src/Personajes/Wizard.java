@@ -11,11 +11,11 @@ import javax.swing.ImageIcon;
 public class Wizard extends Personajes {
     
      private int xD1 = 0;
-    private int xD2= 445;
+    private int xD2= 550;
 
     public Wizard(int vida, int posX, int posY, int dx, int dy, int piso) {
         super(vida, posX, posY, dx, dy, piso);
-        Image wizard = this.loadImage("Archer.png");
+        Image wizard = this.loadImage("Wizard.png");
         this.sprite = wizard;
     }
 
@@ -49,7 +49,7 @@ public class Wizard extends Personajes {
 
     @Override
     public void moverIzquierda() {
-        this.xD1=445;
+        this.xD1=550;
         this.xD2=0;
         this.posX-=dx;
         
@@ -57,7 +57,7 @@ public class Wizard extends Personajes {
 
     @Override
     public void moverDerecha() {
-        this.xD2=445;
+        this.xD2=550;
         this.xD1=0;
         this.posX+=dx;
     }

@@ -11,11 +11,11 @@ import javax.swing.ImageIcon;
 public class Knight_2 extends Personajes {
     
      private int xD1 = 0;
-    private int xD2= 445;
+    private int xD2= 90;
 
     public Knight_2(int vida, int posX, int posY, int dx, int dy, int piso) {
         super(vida, posX, posY, dx, dy, piso);
-        Image knight2 = this.loadImage("Archer.png");
+        Image knight2 = this.loadImage("sprites.png");
         this.sprite = knight2;        
     }
 
@@ -32,7 +32,7 @@ public class Knight_2 extends Personajes {
 
     @Override
     public void paintComponent(Graphics g) {
-        g.drawImage(sprite, posX, posY,100+posX,100+posY,xD1,0,xD2,460, this);
+        g.drawImage(sprite, posX, posY,100+posX,100+posY,xD1,0,xD2,100, this);
 
     }
 
@@ -52,7 +52,7 @@ public class Knight_2 extends Personajes {
 
     @Override
     public void moverIzquierda() {
-        this.xD1=445;
+        this.xD1=90;
         this.xD2=0;
         this.posX-=dx;
         
@@ -60,7 +60,7 @@ public class Knight_2 extends Personajes {
 
     @Override
     public void moverDerecha() {
-        this.xD2=445;
+        this.xD2=90;
         this.xD1=0;
         this.posX+=dx;
     }
