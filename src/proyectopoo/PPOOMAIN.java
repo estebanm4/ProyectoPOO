@@ -15,7 +15,7 @@ public class PPOOMAIN extends JFrame{
     private void initUI()  {
         add(new Menu_Inicio(this));
         setSize(1296, 750);
-        setTitle("Ejercicio 1");
+        setTitle("KILLING BROS");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }    

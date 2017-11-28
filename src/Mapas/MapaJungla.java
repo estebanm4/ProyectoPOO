@@ -5,6 +5,7 @@ package Mapas;
 import Personajes.Arquero;
 import Personajes.Knight;
 import Personajes.Personajes;
+import Personajes.Wizard;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -25,7 +26,7 @@ import proyectopoo.ExeSelecMapa;
 
 public class MapaJungla extends JPanel implements ActionListener {
 
-    private final int piso = 553;
+    private final int piso = 220;
     private final int delay = 50;
     private Timer timer;
     private int secuencia;
@@ -33,6 +34,7 @@ public class MapaJungla extends JPanel implements ActionListener {
     private int xref1 = 530;
     private int xref2 = 700;
     private Personajes personaje;
+    private Personajes p2;
 //    private Personajes enemigo1;
 //    private Personajes enemigo2;
 //    private Personajes enemigo3;
@@ -46,6 +48,7 @@ public class MapaJungla extends JPanel implements ActionListener {
         this.secuencia = 0;
         initMapaVolcan();
         this.personaje = new Knight(10, 20,20,10,10,600);
+        this.p2 = new Wizard(1100, 10, 20, 10, 10, 600);
         setFocusable(true);
         addKeyListener(new EventosTeclado());
     }
@@ -86,6 +89,7 @@ public class MapaJungla extends JPanel implements ActionListener {
         g.drawImage(plat, 400, 200, 400 + 66, 200 + 80, 0, 160, 30 + 5, 190 + 5, this);
         
         this.personaje.pintarPersonaje(g);
+        this.p2.pintarPersonaje(g);
 //        this.enemigo1.pintarPersonaje(g);
 //        this.enemigo2.pintarPersonaje(g);
 //        this.enemigo3.pintarPersonaje(g);
@@ -143,6 +147,9 @@ public class MapaJungla extends JPanel implements ActionListener {
         if(this.personaje.getPosY() < this.piso){
             this.personaje.setPosY(this.personaje.getPosY()+10);
         }
+        if (this.p2.getPosY() < this.piso) {
+            this.p2.setPosY(this.p2.getPosY() + 10);
+        }
 //        if(this.enemigo1.getPosY() < this.piso){
 //            this.enemigo1.setPosY(this.enemigo1.getPosY()+10);
 //        }
@@ -165,38 +172,47 @@ public class MapaJungla extends JPanel implements ActionListener {
         }
     }
  private class EventosTeclado implements KeyListener{
-
-        @Override
+@Override
         public void keyTyped(KeyEvent ke) {
-        int key = ke.getKeyCode();    
-        
+            int key = ke.getKeyCode();
+
         }
 
         @Override
         public void keyPressed(KeyEvent ke) {
             int key = ke.getKeyCode();
-            if(key == KeyEvent.VK_A){
+            if (key == KeyEvent.VK_A) {
                 personaje.moverIzquierda();
                 System.err.println("A");
             }
-            if(key == KeyEvent.VK_D){
+            if (key == KeyEvent.VK_D) {
                 personaje.moverDerecha();
                 System.err.println("D");
             }
-            
-            
+              if(key == KeyEvent.VK_LEFT){
+                p2.moverIzquierda();
+                System.err.println("izqda");
+            }
+            if(key == KeyEvent.VK_RIGHT){
+                p2.moverDerecha();
+                System.err.println("dcha");
+            }
+
         }
 
         @Override
         public void keyReleased(KeyEvent ke) {
             int key = ke.getKeyCode();
-            if(key == KeyEvent.VK_W){
+            if (key == KeyEvent.VK_W) {
                 personaje.saltar();
                 System.err.println("W");
             }
+            if(key == KeyEvent.VK_UP){
+                p2.saltar();
+                System.err.println("arriba");
+            }
         }
-        
+
     }
-   
 }
 

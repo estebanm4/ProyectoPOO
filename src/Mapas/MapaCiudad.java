@@ -3,6 +3,7 @@ package Mapas;
  * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
  */
 import Personajes.Arquero;
+import Personajes.Knight;
 import Personajes.Personajes;
 import java.awt.Color;
 import java.awt.Font;
@@ -32,6 +33,7 @@ public class MapaCiudad extends JPanel implements ActionListener {
     private int xref1 = 530;
     private int xref2 = 700;    
     private Personajes personaje;
+    private Personajes p2;
 
     private ExeSelecMapa ventanaVolverSelecMapa;
     private JButton VolverSelecMapa;
@@ -42,6 +44,7 @@ public class MapaCiudad extends JPanel implements ActionListener {
         this.secuencia = 0;
         initMapaVolcan();
         this.personaje = new Arquero(10, 20, 20, 10, 10, 600);
+        this.p2 = new Knight(1100, 1100, 20, 10, 10, 600);
         //Hilos hilo1 = new Hilos("Asd");
         setFocusable(true);
         addKeyListener(new EventosTeclado());
@@ -84,7 +87,7 @@ public class MapaCiudad extends JPanel implements ActionListener {
         Image fondo = loadImage("environment-preview.png");
         g.drawImage(fondo, 0, 0, 1280, 720, 0 + 500, 0, 600 + 500, 288, this);
         this.personaje.pintarPersonaje(g);
-//        this.enemigo1.pintarPersonaje(g);
+        this.p2.pintarPersonaje(g);
 //        this.enemigo2.pintarPersonaje(g);
 //        this.enemigo3.pintarPersonaje(g);
         g.setColor(Color.DARK_GRAY);
@@ -136,6 +139,9 @@ public class MapaCiudad extends JPanel implements ActionListener {
         if (this.personaje.getPosY() < this.piso) {
             this.personaje.setPosY(this.personaje.getPosY() + 10);
         }
+        if (this.p2.getPosY() < this.piso) {
+            this.p2.setPosY(this.p2.getPosY() + 10);
+        }
 //        if(this.enemigo1.getPosY() < this.piso){
 //            this.enemigo1.setPosY(this.enemigo1.getPosY()+10);
 //        }
@@ -177,6 +183,14 @@ public class MapaCiudad extends JPanel implements ActionListener {
                 personaje.moverDerecha();
                 System.err.println("D");
             }
+              if(key == KeyEvent.VK_LEFT){
+                p2.moverIzquierda();
+                System.err.println("izqda");
+            }
+            if(key == KeyEvent.VK_RIGHT){
+                p2.moverDerecha();
+                System.err.println("dcha");
+            }
 
         }
 
@@ -186,6 +200,10 @@ public class MapaCiudad extends JPanel implements ActionListener {
             if (key == KeyEvent.VK_W) {
                 personaje.saltar();
                 System.err.println("W");
+            }
+            if(key == KeyEvent.VK_UP){
+                p2.saltar();
+                System.err.println("arriba");
             }
         }
 

@@ -3,6 +3,7 @@ package Mapas;
  * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
  */
 import Personajes.Arquero;
+import Personajes.Knight;
 import Personajes.Knight_2;
 import Personajes.Personajes;
 import java.awt.Color;
@@ -31,10 +32,10 @@ public class Mapa_1 extends JPanel  implements ActionListener {
     private int xref1 = 530;
     private int xref2 = 700;
     private Personajes personaje;
-    private Personajes enemigo1;
+    private Personajes p2;
 //    private Personajes enemigo2;
 //    private Personajes enemigo3;
-    private final int piso = 400;
+    private final int piso = 525;
 
     private Timer timer;
     private int x, y;
@@ -49,6 +50,7 @@ public class Mapa_1 extends JPanel  implements ActionListener {
         this.secuencia = 0;
         initBoard();
         this.personaje = new Knight_2(10, 20,20,10,10,600);
+        this.p2 = new Knight(1100, 60, 430, 10, 10, 600);
         setFocusable(true);
         addKeyListener(new EventosTeclado());
     }
@@ -116,6 +118,7 @@ public class Mapa_1 extends JPanel  implements ActionListener {
         g.drawRect(0, 0, 1280, 720);
         
         this.personaje.pintarPersonaje(g);
+        this.p2.pintarPersonaje(g);
 //        this.enemigo1.pintarPersonaje(g);
 //        this.enemigo2.pintarPersonaje(g);
 //        this.enemigo3.pintarPersonaje(g);
@@ -127,6 +130,9 @@ public class Mapa_1 extends JPanel  implements ActionListener {
         
         if(this.personaje.getPosY() < this.piso){
             this.personaje.setPosY(this.personaje.getPosY()+10);
+        }
+        if (this.p2.getPosY() < this.piso) {
+            this.p2.setPosY(this.p2.getPosY() + 10);
         }
         //if(this.enemigo1.getPosY() < this.piso){
            // this.enemigo1.setPosY(this.enemigo1.getPosY()+10);
@@ -161,34 +167,43 @@ public class Mapa_1 extends JPanel  implements ActionListener {
 
         @Override
         public void keyTyped(KeyEvent ke) {
-        int key = ke.getKeyCode();    
-        
+            int key = ke.getKeyCode();
+
         }
 
         @Override
         public void keyPressed(KeyEvent ke) {
             int key = ke.getKeyCode();
-            if(key == KeyEvent.VK_A){
+            if (key == KeyEvent.VK_A) {
                 personaje.moverIzquierda();
                 System.err.println("A");
             }
-            if(key == KeyEvent.VK_D){
+            if (key == KeyEvent.VK_D) {
                 personaje.moverDerecha();
                 System.err.println("D");
             }
-            
-            
+              if(key == KeyEvent.VK_LEFT){
+                p2.moverIzquierda();
+                System.err.println("izqda");
+            }
+            if(key == KeyEvent.VK_RIGHT){
+                p2.moverDerecha();
+                System.err.println("dcha");
+            }
+
         }
 
         @Override
         public void keyReleased(KeyEvent ke) {
             int key = ke.getKeyCode();
-            if(key == KeyEvent.VK_W){
+            if (key == KeyEvent.VK_W) {
                 personaje.saltar();
                 System.err.println("W");
             }
+            if(key == KeyEvent.VK_UP){
+                p2.saltar();
+                System.err.println("arriba");
+            }
         }
-        
-    }
-   
+        }
 }
