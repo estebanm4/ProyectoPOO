@@ -30,6 +30,8 @@ public class MapaJungla extends JPanel implements ActionListener {
     private Timer timer;
     private int secuencia;
     private int x = 0;
+    private int xref1 = 530;
+    private int xref2 = 700;
     private Personajes personaje;
 //    private Personajes enemigo1;
 //    private Personajes enemigo2;
@@ -120,6 +122,11 @@ public class MapaJungla extends JPanel implements ActionListener {
         g.drawRect(400, 200, 60, 0); //Plataforma 1
         g.setColor(Color.DARK_GRAY);
         g.drawRect(820, 300, 60, 0); //Plataforma 2
+        
+        g.setColor(Color.green);
+        g.fillRect(15, 15, xref1, 30);
+        g.setColor(Color.green);
+        g.fillRect(xref2, 15, 530, 30);
 
         g.setColor(Color.CYAN); // Este está por fuera de la pantalla, para que cuando se detecte la colisión, el personaje se detenda
         g.drawRect(0, 0, 1280, 720);

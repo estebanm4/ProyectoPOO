@@ -28,6 +28,8 @@ public class Mapa_1 extends JPanel  implements ActionListener {
     private final int xRef = 0;
     private final int yRef = 0;
     private final int DELAY = 50;
+    private int xref1 = 530;
+    private int xref2 = 700;
     private Personajes personaje;
     private Personajes enemigo1;
 //    private Personajes enemigo2;
@@ -106,6 +108,10 @@ public class Mapa_1 extends JPanel  implements ActionListener {
         g.drawRect(1230,170,60,0);
         g.setColor(Color.black);    //Escalera
         g.drawRect(800,163,0,275);
+        g.setColor(Color.green);
+        g.fillRect(15, 15, xref1, 30);
+        g.setColor(Color.green);
+        g.fillRect(xref2, 15, 530, 30);
         g.setColor(Color.blue); // Este está por fuera de la pantalla, para que cuando se detecte la colisión, el personaje muera
         g.drawRect(0, 0, 1280, 720);
         

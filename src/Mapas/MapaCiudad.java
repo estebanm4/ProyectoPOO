@@ -30,6 +30,8 @@ public class MapaCiudad extends JPanel implements ActionListener {
     private Timer timer;
     private final int secuencia;
     private final int x = 0;
+    private int xref1 = 530;
+    private int xref2 = 700;
 
     private Personajes personaje;
 
@@ -115,6 +117,10 @@ public class MapaCiudad extends JPanel implements ActionListener {
         g.drawRect(225, 185, 80, 0);
         g.setColor(Color.DARK_GRAY);
         g.drawRect(35, 185, 80, 0);
+        g.setColor(Color.green);
+        g.fillRect(15, 15, xref1, 30);
+        g.setColor(Color.green);
+        g.fillRect(xref2, 15, 530, 30);
         g.setColor(Color.CYAN); // Este está por fuera de la pantalla, para que cuando se detecte la colisión, el personaje se detenda
         g.drawRect(0, 0, 1280, 720);
 

@@ -31,6 +31,8 @@ public class MapaVolcan extends JPanel implements ActionListener {
     private Timer timer;
     private int secuencia;
     private int x = 0;
+    private int xref1 = 530;
+    private int xref2 = 700;
 
     private Personajes personaje;
 //    private Personajes enemigo1;
@@ -148,6 +150,11 @@ public class MapaVolcan extends JPanel implements ActionListener {
         g.drawRect(895, 555, 252, 20);
         g.drawRect(195, 260, 375, 20);
         g.drawRect(833, 390, 255, 20);
+        
+        g.setColor(Color.green);
+        g.fillRect(15, 15, xref1, 30);
+        g.setColor(Color.green);
+        g.fillRect(xref2, 15, 530, 30);
         //
         Image pisogen = loadImage("volcano_pack_alt_05.png");
         for (j = 128 * 2; j <= 4 * 128; j = j + 128) {
