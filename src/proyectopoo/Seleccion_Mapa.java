@@ -39,7 +39,7 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
       private int contadorMapa3;
        private int contadorMapa4;
             
-       private File file;
+       private final File file;
     
     private PPOOMAIN ventanaMain;
     private ExeMapaJungla mapaJungla;
@@ -60,7 +60,7 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
         
         Scanner s = new Scanner(file);
         s.useDelimiter(",");
-        while (s.hasNext()){
+        /*while (s.hasNext()){
             
             String scontadorMapa1=s.next().trim();
             String scontadorMapa2=s.next().trim();
@@ -70,7 +70,7 @@ public class Seleccion_Mapa extends JPanel implements ActionListener{
             contadorMapa2= Integer.parseInt(scontadorMapa2);
             contadorMapa3= Integer.parseInt(scontadorMapa3);
             contadorMapa4= Integer.parseInt(scontadorMapa4);
-        }
+        }*/
         
     }
 

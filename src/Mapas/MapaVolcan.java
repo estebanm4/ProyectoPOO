@@ -13,6 +13,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -223,7 +226,11 @@ public class MapaVolcan extends JPanel implements ActionListener {
         
         repaint();
         if(e.getSource() == VolverSelecMapa){            
-            ventanaVolverSelecMapa = new ExeSelecMapa();
+            try {
+                ventanaVolverSelecMapa = new ExeSelecMapa();
+            } catch (IOException ex) {
+                Logger.getLogger(MapaVolcan.class.getName()).log(Level.SEVERE, null, ex);
+            }
             ventana.dispose();
             ventanaVolverSelecMapa.setVisible(true); 
         }

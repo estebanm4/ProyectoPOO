@@ -13,6 +13,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,7 +29,7 @@ public class Mapa_1 extends JPanel  implements ActionListener {
     private final int yRef = 0;
     private final int DELAY = 50;
     private Personajes personaje;
-//    private Personajes enemigo1;
+    private Personajes enemigo1;
 //    private Personajes enemigo2;
 //    private Personajes enemigo3;
     private final int piso = 400;
@@ -70,13 +73,8 @@ public class Mapa_1 extends JPanel  implements ActionListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
                       
-        Image fondo = loadImage("Mapa_1Final.png");
-        
-        
-        
+        Image fondo = loadImage("Mapa_1Final.png");      
         g.drawImage(fondo, x, y, 1280, 720,this);
-        
-        
         
         g.setColor(Color.white);
         g.drawRect(320,165,450,0);
@@ -124,9 +122,9 @@ public class Mapa_1 extends JPanel  implements ActionListener {
         if(this.personaje.getPosY() < this.piso){
             this.personaje.setPosY(this.personaje.getPosY()+10);
         }
-//        if(this.enemigo1.getPosY() < this.piso){
-//            this.enemigo1.setPosY(this.enemigo1.getPosY()+10);
-//        }
+        //if(this.enemigo1.getPosY() < this.piso){
+           // this.enemigo1.setPosY(this.enemigo1.getPosY()+10);
+        //}
 //        if(this.enemigo2.getPosY() < this.piso){
 //            this.enemigo2.setPosY(this.enemigo2.getPosY()+10);
 //        }
@@ -135,7 +133,11 @@ public class Mapa_1 extends JPanel  implements ActionListener {
 //        }
         
         if(e.getSource() == VolverSelecMapa){
-            ventanaVolverSelecMapa = new ExeSelecMapa();
+            try {
+                ventanaVolverSelecMapa = new ExeSelecMapa();
+            } catch (IOException ex) {
+                Logger.getLogger(Mapa_1.class.getName()).log(Level.SEVERE, null, ex);
+            }
             ventanaVolverSelecMapa.setVisible(true); ventana.dispose();
         }
         

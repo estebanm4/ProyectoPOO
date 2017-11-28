@@ -25,4 +25,4 @@ public class PPOOMAIN extends JFrame{
         ex.setVisible(true);
         ex.initUI();
     }
-}
+}   

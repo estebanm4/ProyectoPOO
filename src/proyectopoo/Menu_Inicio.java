@@ -11,10 +11,10 @@ import java.awt.event.ActionListener;
 import javax.sound.sampled.Clip;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,13 +24,9 @@ public class Menu_Inicio extends JPanel implements ActionListener {
 
     private JButton BotonJUGAR; // Prueba
     private JButton BotonCONFIGURACIONES; // Prueba
-    private JButton BotonMusicPlay; 
-    private JButton BotonMusicStop;
      
     private JFrame ventana; // Prueba
     
-    private ExeMapaVolcan mapaVolcan; // Prueba
-    private ExeMapa_1 mapa1; // Prueba
     private ExeConfig configuraciones;
     private ExeSelecMapa seleccionMapa;
     static Clip sonidoInicio;    
@@ -59,7 +55,7 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         BotonCONFIGURACIONES.setForeground(Color.BLACK);
         BotonCONFIGURACIONES.setBackground(Color.WHITE);
         BotonCONFIGURACIONES.addActionListener(this);
-        this.add(BotonCONFIGURACIONES);
+        this.add(BotonCONFIGURACIONES); 
         
         try {           
             sonidoInicio= AudioSystem.getClip();
@@ -82,11 +78,17 @@ public class Menu_Inicio extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource() == BotonJUGAR){
-            seleccionMapa = new ExeSelecMapa();
-            ventana.dispose(); 
+       
+            try {
+                seleccionMapa = new ExeSelecMapa();
+            } catch (IOException ex) {
+                Logger.getLogger(Menu_Inicio.class.getName()).log(Level.SEVERE, null, ex);
+            }
             seleccionMapa.setVisible(true);
+            ventana.dispose(); 
+            
         }
-        if(e.getSource() == BotonCONFIGURACIONES){            
+        if(e.getSource() == BotonCONFIGURACIONES){ 
             configuraciones = new ExeConfig();
             ventana.dispose(); 
             configuraciones.setVisible(true);
