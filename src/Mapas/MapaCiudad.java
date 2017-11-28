@@ -15,6 +15,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -73,12 +76,6 @@ public class MapaCiudad extends JPanel implements ActionListener{
 //        this.enemigo1.pintarPersonaje(g);
 //        this.enemigo2.pintarPersonaje(g);
 //        this.enemigo3.pintarPersonaje(g);
-        
-        
-        
-        
-        
-        
         g.setColor(Color.DARK_GRAY);
         g.drawRect(1155, 560, 60, 0);
         g.setColor(Color.DARK_GRAY);
@@ -135,9 +132,14 @@ public class MapaCiudad extends JPanel implements ActionListener{
 //        }
         repaint();
         if (e.getSource() == VolverSelecMapa) {
-            ventanaVolverSelecMapa = new ExeSelecMapa();
-            ventana.dispose();
+            try {
+                ventanaVolverSelecMapa = new ExeSelecMapa();
+            } catch (IOException ex) {
+                Logger.getLogger(MapaCiudad.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
             ventanaVolverSelecMapa.setVisible(true);
+            ventana.dispose();
         }
     }
     
