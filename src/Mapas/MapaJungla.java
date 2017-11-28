@@ -1,11 +1,16 @@
 package Mapas;
 
+import Personajes.Arquero;
+import Personajes.Knight;
+import Personajes.Personajes;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,6 +25,10 @@ public class MapaJungla extends JPanel implements ActionListener {
     private Timer timer;
     private int secuencia;
     private int x = 0;
+    private Personajes personaje;
+//    private Personajes enemigo1;
+//    private Personajes enemigo2;
+//    private Personajes enemigo3;
 
     private ExeSelecMapa ventanaVolverSelecMapa;
     private JButton VolverSelecMapa;
@@ -29,6 +38,9 @@ public class MapaJungla extends JPanel implements ActionListener {
         this.ventana = ventana;
         this.secuencia = 0;
         initMapaVolcan();
+        this.personaje = new Knight(10, 20,20,10,10,600);
+        setFocusable(true);
+        addKeyListener(new EventosTeclado());
     }
 
     private void initMapaVolcan() {
@@ -42,6 +54,8 @@ public class MapaJungla extends JPanel implements ActionListener {
         VolverSelecMapa.setBackground(Color.WHITE);
         VolverSelecMapa.addActionListener(this);
         this.add(VolverSelecMapa);
+        
+        
 
         this.timer = new Timer(delay, this);
         timer.start();
@@ -63,6 +77,11 @@ public class MapaJungla extends JPanel implements ActionListener {
         Image plat = loadImage("tileset.png");
         g.drawImage(plat, 820, 300, 820 + 66, 300 + 80, 0, 160, 30 + 5, 190 + 5, this);
         g.drawImage(plat, 400, 200, 400 + 66, 200 + 80, 0, 160, 30 + 5, 190 + 5, this);
+        
+        this.personaje.pintarPersonaje(g);
+//        this.enemigo1.pintarPersonaje(g);
+//        this.enemigo2.pintarPersonaje(g);
+//        this.enemigo3.pintarPersonaje(g);
 
         g.setColor(Color.DARK_GRAY);
         g.drawRect(60, 320, 65, 0); //H
@@ -110,6 +129,18 @@ public class MapaJungla extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(this.personaje.getPosY() < this.piso){
+            this.personaje.setPosY(this.personaje.getPosY()+10);
+        }
+//        if(this.enemigo1.getPosY() < this.piso){
+//            this.enemigo1.setPosY(this.enemigo1.getPosY()+10);
+//        }
+//        if(this.enemigo2.getPosY() < this.piso){
+//            this.enemigo2.setPosY(this.enemigo2.getPosY()+10);
+//        }
+//        if(this.enemigo3.getPosY() < this.piso){
+//            this.enemigo3.setPosY(this.enemigo3.getPosY()+10);
+//        }
 
         repaint();
         if (e.getSource() == VolverSelecMapa) {
@@ -118,5 +149,39 @@ public class MapaJungla extends JPanel implements ActionListener {
             ventanaVolverSelecMapa.setVisible(true);
         }
     }
+ private class EventosTeclado implements KeyListener{
 
+        @Override
+        public void keyTyped(KeyEvent ke) {
+        int key = ke.getKeyCode();    
+        
+        }
+
+        @Override
+        public void keyPressed(KeyEvent ke) {
+            int key = ke.getKeyCode();
+            if(key == KeyEvent.VK_A){
+                personaje.moverIzquierda();
+                System.err.println("A");
+            }
+            if(key == KeyEvent.VK_D){
+                personaje.moverDerecha();
+                System.err.println("D");
+            }
+            
+            
+        }
+
+        @Override
+        public void keyReleased(KeyEvent ke) {
+            int key = ke.getKeyCode();
+            if(key == KeyEvent.VK_W){
+                personaje.saltar();
+                System.err.println("W");
+            }
+        }
+        
+    }
+   
 }
+

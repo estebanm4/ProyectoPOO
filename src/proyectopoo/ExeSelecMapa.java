@@ -5,6 +5,9 @@
  */
 package proyectopoo;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -14,10 +17,14 @@ import javax.swing.JFrame;
 public class ExeSelecMapa extends JFrame{
 
     public ExeSelecMapa() {
-        initUI();
+        try {
+            initUI();
+        } catch (IOException ex) {
+            Logger.getLogger(ExeSelecMapa.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    private void initUI() {
+    private void initUI() throws IOException {
         add(new Seleccion_Mapa(this));
         setSize(1303, 775);
         setTitle("SELECCION DE MAPA");
