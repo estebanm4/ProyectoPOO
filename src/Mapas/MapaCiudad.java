@@ -32,7 +32,6 @@ public class MapaCiudad extends JPanel implements ActionListener {
     private final int x = 0;
     private int xref1 = 530;
     private int xref2 = 700;
-
     private Personajes personaje;
 
     private ExeSelecMapa ventanaVolverSelecMapa;
