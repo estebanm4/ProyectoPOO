@@ -30,8 +30,8 @@ public class MapaCiudad extends JPanel implements ActionListener{
     private final int piso = 530;
     private final int delay = 40;
     private Timer timer;
-    private int secuencia;
-    private int x = 0;
+    private final int secuencia;
+    private final int x = 0;
     
     private Personajes personaje;
 //    private Personajes enemigo1;
