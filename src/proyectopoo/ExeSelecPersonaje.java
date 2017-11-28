@@ -1,5 +1,7 @@
 package proyectopoo;
-
+/**
+ * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
+ */
 import java.io.IOException;
 import javax.swing.JFrame;
 

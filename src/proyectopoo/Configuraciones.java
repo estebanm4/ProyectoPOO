@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectopoo;
-
+/**
+ * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
+ */
     import java.awt.Color;
     import java.awt.Font;
     import java.awt.Graphics;

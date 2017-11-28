@@ -1,15 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectopoo;
 
 import javax.swing.JFrame;
-
 /**
- *
- * @author lenovo
+ * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
  */
 public class ExeConfig extends JFrame{
 

@@ -1,5 +1,7 @@
 package proyectopoo;
-
+/**
+ * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
+ */
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;

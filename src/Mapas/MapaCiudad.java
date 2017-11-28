@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Mapas;
-
+/**
+ * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
+ */
 import Personajes.Arquero;
 import Personajes.Personajes;
 import java.awt.Color;
@@ -31,9 +28,6 @@ public class MapaCiudad extends JPanel implements ActionListener{
     private int x = 0;
     
     private Personajes personaje;
-//    private Personajes enemigo1;
-//    private Personajes enemigo2;
-//    private Personajes enemigo3;
 
     private ExeSelecMapa ventanaVolverSelecMapa;
     private JButton VolverSelecMapa;
@@ -70,14 +64,6 @@ public class MapaCiudad extends JPanel implements ActionListener{
         Image fondo = loadImage("environment-preview.png");
         g.drawImage(fondo, 0, 0, 1280, 720, 0 + 500, 0, 600 + 500, 288, this);
         this.personaje.pintarPersonaje(g);
-//        this.enemigo1.pintarPersonaje(g);
-//        this.enemigo2.pintarPersonaje(g);
-//        this.enemigo3.pintarPersonaje(g);
-        
-        
-        
-        
-        
         
         g.setColor(Color.DARK_GRAY);
         g.drawRect(1155, 560, 60, 0);

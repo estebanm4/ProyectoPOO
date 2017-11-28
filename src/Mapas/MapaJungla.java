@@ -1,5 +1,7 @@
 package Mapas;
-
+/**
+ * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
+ */
 import Personajes.Arquero;
 import Personajes.Knight;
 import Personajes.Personajes;

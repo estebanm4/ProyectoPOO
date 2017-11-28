@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectopoo;
-
+/**
+ * @autores Aldo J Márquez, Mateo Pacheco, Luis Suárez, Juan E Muñoz
+ */
 import Mapas.ExeMapaCiudad;
 import Mapas.ExeMapaJungla;
 import Mapas.ExeMapaVolcan;
@@ -28,10 +25,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-/**
- *
- * @author lenovo
- */
+
 public class Seleccion_Mapa extends JPanel implements ActionListener{
     
     private JButton SelecMapa1; // Prueba
