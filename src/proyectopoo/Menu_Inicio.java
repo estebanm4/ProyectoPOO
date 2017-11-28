@@ -18,8 +18,6 @@ import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -64,7 +62,7 @@ public class Menu_Inicio extends JPanel implements ActionListener {
         BotonCONFIGURACIONES.setForeground(Color.BLACK);
         BotonCONFIGURACIONES.setBackground(Color.WHITE);
         BotonCONFIGURACIONES.addActionListener(this);
-        this.add(BotonCONFIGURACIONES);
+        this.add(BotonCONFIGURACIONES); 
         
         try {           
             sonidoInicio= AudioSystem.getClip();
